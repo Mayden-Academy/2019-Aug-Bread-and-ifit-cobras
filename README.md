@@ -1,8 +1,8 @@
 # 2019-Aug-Bread-and-ifit-cobras
 
-- Git clone the repo using the SSH key
+- Git clone the repo using the SSH key into the html folder/where you want the project to live
 
-- In your terminal cmd line, run git clone copied-ssh-link
+- In your terminal cmd line, run git clone then-the-copied-ssh-link
 
 - CD into the newly created project directory, you should now be on master branch
 - Ensuring you are in your project root folder (in terminal), run the following 4 commands:

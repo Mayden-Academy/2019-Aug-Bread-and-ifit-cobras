@@ -1,2 +1,1 @@
-# year-cohort-projectName
-project template repo
+# 2019-Aug-Bread-and-ifit-cobras

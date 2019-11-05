@@ -29,7 +29,7 @@ class DisplayIngredients
         foreach ($ingredientSorted as $category => $array){
             $list = '';
             foreach ($array as $key => $value){
-                $list .= '<li>'.$value.'</li>';
+                $list .= '<input type="checkbox">'.$value.'</input>';
             }
         $accordion .= '<div class="card">
                         <div class="card-header" id="headingOne">
@@ -47,9 +47,11 @@ class DisplayIngredients
                          </ul>                        
                          </div>
                         </div>
-                    </div> 
-                </div>';
+                    </div>';
         }
+
+        $accordion .= '</div>';
+
         return $accordion;
     }
 }

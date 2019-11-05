@@ -6,9 +6,9 @@ namespace BreadAndIfit\Ingredients;
 
 class Ingredient
 {
-    private $id;
-    private $name;
-    private $category;
+    protected $id;
+    protected $name;
+    protected $category;
 
     public function getId(): int {
         return $this->id;

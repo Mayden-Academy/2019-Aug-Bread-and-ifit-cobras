@@ -10,7 +10,7 @@ class IngredientGateway
 {
     static private function formatData(array $ingredients): string
     {
-        $url = "http://www.recipepuppy.co/api/?i=";
+        $url = "http://www.recipepuppy.com/api/?i=";
         foreach ($ingredients as $ingredient) {
             $url .= $ingredient;
             $url .= ',';
@@ -28,12 +28,12 @@ class IngredientGateway
         curl_setopt($ch, CURLOPT_FAILONERROR, true);
         $recipes = curl_exec($ch);
         if (curl_error($ch)) {
-            $error_msg = curl_error($ch);
-            return  $error_msg;
+            $return = 'Something went wrong, please refresh the page and try again.';
         }else{
-        return $recipes;
+            $return = $recipes;
         }
         curl_close($ch);
+        return $return;
     }
 
     static public function sendDataReturnResponse(array $ingredients): string

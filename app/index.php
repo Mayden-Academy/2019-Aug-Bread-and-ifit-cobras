@@ -14,9 +14,6 @@
     $db = DbConnector::getDatabase();
 
     $ingredients = IngredientHydrator::getIngredients($db);
-
-    var_dump($ingredients);
-
     ?>
 
 </head>

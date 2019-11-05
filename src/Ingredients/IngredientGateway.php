@@ -5,8 +5,6 @@ namespace BreadAndIfit\Ingredients;
 
 
 use BreadAndIfit\Interfaces\GatewayInterface;
-use mysql_xdevapi\Exception;
-
 class IngredientGateway implements GatewayInterface
 {
     static private function formatData(array $ingredients): string

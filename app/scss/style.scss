@@ -49,6 +49,16 @@ body {
 
 #accordionExample {
   margin-top: 20px;
+  text-align: left;
+  color: #ff0066;
+
+  .btn-link {
+    color: $gradientColor2;
+  }
+
+  .btn-link:hover {
+    text-decoration: none;
+  }
 }
 
 #carouselExampleControls{
@@ -70,7 +80,7 @@ body {
 }
 
 form{
-  text-align: center; padding-left: 15px;
+  text-align: center;
 }
 
 .choiceBtn{

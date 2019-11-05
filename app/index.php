@@ -32,7 +32,7 @@
                         <h2 class="mb-0">
                             <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne"
                                     aria-expanded="true" aria-controls="collapseOne">
-                                Collapsible Group Item #1
+                                Vegetables
                             </button>
                         </h2>
                     </div>
@@ -40,7 +40,7 @@
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                          data-parent="#accordionExample">
                         <div class="card-body">
-                            Sample texdfght.
+                            <input type="checkbox" value="tomato" name="tomato"><span class="ingredient"> tomato</span>
                         </div>
                     </div>
                 </div>

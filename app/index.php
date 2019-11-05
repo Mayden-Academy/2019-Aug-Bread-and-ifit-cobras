@@ -17,10 +17,16 @@
         book</a>
 </nav>
 <div class="nav-transform"></div>
+
+<div class="container-fluid">
 <div class="row" id="mainContent">
-    <aside class="col-3">
+    <aside class="col-3 justify-content-center">
         <form>
-            <div class="accordion" id="accordionExample">
+            <input class="choiceBtn " id="getReciepeBtn" type="submit" value="Get Recipe"><br>
+            <input class="choiceBtn" id="expandAll" type="submit" value="Expand All">
+
+
+            <div class="accordion " id="accordionExample">
                 <div class="card">
                     <div class="card-header" id="headingOne">
                         <h2 class="mb-0">
@@ -34,7 +40,7 @@
                     <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
                          data-parent="#accordionExample">
                         <div class="card-body">
-                            Sample text.
+                            Sample texdfght.
                         </div>
                     </div>
                 </div>
@@ -70,9 +76,10 @@
                     </div>
                 </div>
             </div>
-            <input type="submit" value="Get Recipe">
+
         </form>
     </aside>
+
 
     <main class="col-9">
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
@@ -97,6 +104,7 @@
             </a>
         </div>
     </main>
+</div>
 </div>
 </body>
 </html>

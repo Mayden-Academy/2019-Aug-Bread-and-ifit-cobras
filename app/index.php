@@ -9,9 +9,14 @@
 </head>
 <body>
 <nav class="nav nav-pills flex-column flex-sm-row">
-    <a class="col-3 flex-sm-fill text-sm-center nav-link active" href="#">Active</a>
-    <a class="col-6 flex-sm-fill text-sm-center nav-link" href="#">Longer nav link</a>
-    <a class="col-3 flex-sm-fill text-sm-center nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+    <a class="col-3 flex-sm-fill text-sm-center nav-link" href="#">Recipe Finder</a>
+    <a class="col-6 flex-sm-fill text-sm-center nav-link" href="#">Bread and Ifits</a>
+    <a class="col-3 flex-sm-fill text-sm-center nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Recipe Book</a>
 </nav>
+
+<aside class="col-3">
+    This is sorted
+</aside>
+
 </body>
 </html>

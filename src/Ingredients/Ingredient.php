@@ -8,12 +8,7 @@ class Ingredient
 {
     private $id;
     private $name;
-
-    public function __construct($id, $name)
-    {
-        $this->id = $id;
-        $this->name = $name;
-    }
+    private $category;
 
     public function getId() {
         return $this->id;
@@ -21,5 +16,9 @@ class Ingredient
 
     public function getName() {
         return $this->name;
+    }
+
+    public function getCategory() {
+        return $this->category;
     }
 }

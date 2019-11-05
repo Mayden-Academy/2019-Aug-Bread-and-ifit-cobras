@@ -1,5 +1,7 @@
 $primaryColor: red;
 $secondaryColor: #ffffff;
+$gradientColor1: #d7d2cc;
+$gradientColor2: #304352;
 *{
   font-family: 'Raleway', sans-serif;
 }
@@ -19,7 +21,7 @@ $secondaryColor: #ffffff;
   #title{
     font-size: 2rem;
     padding-top: 1rem;
-    background: -webkit-linear-gradient(right, #eee, #333);
+    background: -webkit-linear-gradient(right, $gradientColor1, $gradientColor2);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
   }
@@ -37,8 +39,7 @@ $secondaryColor: #ffffff;
 
 aside {
   height: 100vh;
-  background-color: pink;
-  border-right: 2px solid black;
+  background-image: -webkit-linear-gradient($gradientColor1, $gradientColor2);
 }
 
 body {

@@ -17,22 +17,20 @@ class IngredientGateway
         return $url;
     }
 
-    static private function sendDataToAPI($url)
+    static private function sendDataToAPI(string $url): string
     {
-
-
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $url);
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        $recipes = curl_exec($ch);
+        curl_close($ch);
+        return $recipes;
     }
 
-
-
-
-
-
-
-
-
-    public function sendDataReturnResponse()
+    static public function sendDataReturnResponse(array $ingredients): string
     {
-
+        $recipes = self::sendDataToAPI(self::formatData($ingredients));
+        return $recipes;
     }
 }

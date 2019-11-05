@@ -40,8 +40,33 @@ $gradientColor2: #304352;
 aside {
   height: 100vh;
   background-image: -webkit-linear-gradient($gradientColor1, $gradientColor2);
+
 }
 
 body {
   overflow: hidden;
 }
+
+#accordionExample {
+  margin-top: 90px;
+  padding: 10px;
+}
+
+#carouselExampleControls{
+  padding: 0;
+  //
+  //width:100%;
+  //height:100%;
+  //object-fit: cover;
+  //overflow: hidden;
+
+}
+
+.carousel-inner{
+  width:100vw;
+  height:100vh;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.col-9{padding: 0}

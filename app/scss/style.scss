@@ -1,21 +1,46 @@
 $primaryColor: red;
-$secondaryColor: beige;
+$secondaryColor: #ffffff;
+*{
+  font-family: 'Raleway', sans-serif;
+}
 
 .nav {
   background-color: $secondaryColor;
-  border-bottom: 2px solid black;
+  z-index: 10;
+  height: 50px;
+  width: 100%;
+  position: fixed;
 
   .nav-link{
     color: black;
+    padding-top: 1.8rem;
+    font-size: 1.2rem;
   }
   #title{
-    color: $primaryColor;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    padding-top: 1rem;
+    background: -webkit-linear-gradient(right, #eee, #333);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
   }
+}
+.nav-transform {
+  height: 85px;
+  transform: rotate(1.5deg);
+  position: fixed;
+  width: 110%;
+  top: 0;
+  left: 0;
+  background-color: $secondaryColor;
+  z-index: 5;
 }
 
 aside {
   height: 100vh;
-  background-color: $secondaryColor;
+  background-color: pink;
   border-right: 2px solid black;
+}
+
+body {
+  overflow: hidden;
 }

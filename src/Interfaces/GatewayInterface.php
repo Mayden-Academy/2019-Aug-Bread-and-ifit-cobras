@@ -6,5 +6,5 @@ namespace BreadAndIfit\Interfaces;
 
 interface GatewayInterface
 {
-    public function sendDataReturnResponse();
+    static public function sendDataReturnResponse(array $array): string;
 }

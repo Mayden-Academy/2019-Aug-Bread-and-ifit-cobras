@@ -1,12 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" >
-    <script type="text/javascript" src="js/dist/main.js"></script>
-</head>
-<body>
+<?php
+require '../vendor/autoload.php';
 
-</body>
-</html>
+$ingredients = ['cabbage', 'chicken'];
+echo (\BreadAndIfit\Ingredients\IngredientGateway::formatData($ingredients));

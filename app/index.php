@@ -19,7 +19,9 @@
 
     $ingredients = IngredientHydrator::getIngredients($db);
 
-    $ingredientsSorted = DisplayIngredients::displayIngredients($ingredients);
+    $accordion = DisplayIngredients::displayIngredients($ingredients);
+
+    echo $accordion;
 
     ?>
 

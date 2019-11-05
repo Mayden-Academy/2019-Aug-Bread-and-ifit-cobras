@@ -6,7 +6,7 @@ namespace BreadAndIfit\Ingredients;
 
 class DisplayIngredients
 {
-    public static function displayIngredients($ingredients) {
+    public static function displayIngredients(array $ingredients): string {
 
         $ingredientSorted = self::formatData($ingredients);
 
@@ -16,7 +16,7 @@ class DisplayIngredients
 
     }
 
-    private static function formatData($ingredients) {
+    private static function formatData(array $ingredients): array {
         $ingredientSorted = [];
         foreach ($ingredients as $ingredient) {
             $ingredientSorted[$ingredient->getCategory()][] = $ingredient->getName();
@@ -24,7 +24,7 @@ class DisplayIngredients
         return $ingredientSorted;
     }
 
-    private static function outputHTML($ingredientSorted) {
+    private static function outputHTML(array $ingredientSorted): string {
         $accordion = '<div class="accordion" id="accordionExample">';
         foreach ($ingredientSorted as $category => $array){
             $list = '';
@@ -50,10 +50,7 @@ class DisplayIngredients
                     </div> 
                 </div>';
         }
-        echo $accordion;
+        return $accordion;
     }
-
-
-
 }
 

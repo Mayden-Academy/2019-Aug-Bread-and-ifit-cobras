@@ -10,15 +10,15 @@ class Ingredient
     private $name;
     private $category;
 
-    public function getId() {
+    public function getId(): int {
         return $this->id;
     }
 
-    public function getName() {
+    public function getName(): string {
         return $this->name;
     }
 
-    public function getCategory() {
+    public function getCategory(): string {
         return $this->category;
     }
 }

@@ -10,8 +10,8 @@
 <body>
 <nav class="nav nav-pills flex-column flex-sm-row">
     <a class="col-3 flex-sm-fill text-sm-center nav-link" href="#">Recipe Finder</a>
-    <a class="col-6 flex-sm-fill text-sm-center nav-link" href="#">Bread and Ifits</a>
-    <a class="col-3 flex-sm-fill text-sm-center nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Recipe Book</a>
+    <a id="title" class="col-6 flex-sm-fill text-sm-center nav-link align-middle" href="#">Bread and Ifits</a>
+    <a class="col-3 flex-sm-fill text-sm-center nav-link" href="#" tabindex="-1" aria-disabled="true">Go to recipe book</a>
 </nav>
 <div class="row">
 <aside class="col-3">

@@ -20,9 +20,9 @@
 </head>
 <body>
 <nav class="nav nav-pills flex-column flex-sm-row">
-    <a class="col-3 flex-sm-fill text-sm-center nav-link" href="#">Recipe Finder</a>
-    <a id="title" class="col-6 flex-sm-fill text-sm-center nav-link align-middle" href="#">Bread and Ifits.</a>
-    <a class="col-3 flex-sm-fill text-sm-center nav-link" href="#" tabindex="-1" aria-disabled="true">Go to recipe
+    <a class="col-2 flex-sm-fill text-sm-center nav-link" href="#">Recipe Finder</a>
+    <a id="title" class="col-8 flex-sm-fill text-sm-center nav-link align-middle" href="#">Bread and Ifits.</a>
+    <a class="col-2 flex-sm-fill text-sm-center nav-link" href="#" tabindex="-1" aria-disabled="true">Go to recipe
         book</a>
 </nav>
 <div class="nav-transform"></div>

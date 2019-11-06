@@ -60,20 +60,18 @@ class DisplayIngredients
                         </div>
 
                          <div id="collapse' . $category . '" class="collapse multi-collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                         <div class="card-body">
-                         <ul>
-' . $list . '
-                         </ul>
+                         <div class="card card-body">
+                         <ul>' . $list . ' </ul>
                          </div>
                         </div>
                     </div>
 ';
         }
         $accordion .= '</div>';
-        $accordion = '<input class="choiceBtn" id="expandAll" data-toggle="collapse"
-                       data-target=".multi-collapse" aria-expanded="false"
-                       aria-controls="' . $cats . '" value="Expand All">
+        $accordion = '<input class="choiceBtn" id="expandAll" data-toggle="collapse"  data-target=".multi-collapse" aria-expanded="false"
+                      aria-controls="' . $cats . '" value="Expand All">
                        <div class="accordion" id="accordionExample">' . $accordion;
+        echo $cats;
         return $accordion;
     }
 }

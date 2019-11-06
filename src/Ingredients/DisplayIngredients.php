@@ -6,6 +6,13 @@ namespace BreadAndIfit\Ingredients;
 
 class DisplayIngredients
 {
+    /**
+     * This method calls the functions below and its purpose is to be called in the index.php to make
+     * the accordion of ingredients.
+     * @param array $ingredients is the array of objects that came from the database.
+     * @return string is the outputted accordion.
+     */
+
     public static function displayIngredients(array $ingredients): string {
 
         $ingredientSorted = self::formatData($ingredients);
@@ -20,7 +27,7 @@ class DisplayIngredients
      * This method formats the array of data into a multidimensional associative array of ingredients
      * organised by their category.
      * @param array $ingredients is the array of objects that came from the database.
-     * @return array
+     * @return array is the formatted array.
      */
 
     private static function formatData(array $ingredients): array {

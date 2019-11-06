@@ -86,7 +86,6 @@
 
     <main class="col-9">
         <div id="mainPannel">
-            <div>.</div>
             <div class="row recipe">
                 <div class="col-10 col-lg-4">
                     <img src="../res/images/food.jpg" alt="...">

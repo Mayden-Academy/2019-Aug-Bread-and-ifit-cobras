@@ -51,9 +51,9 @@ class DisplayIngredients
                 $list .= '<div><input type="checkbox" value="' . $value . '" name="' . $value . '"><span class="ingredient">'.' '. $value . '</span></input></div>';
             }
             $accordion .= '<div class="card">
-                        <a class="card-header" type="button" data-toggle="collapse" data-target="#multiCollapseExample' . $category . '"
-                           aria-expanded="false" aria-controls="multiCollapseExample' . $category . '">' . $category . '</a>
-                        <div class="collapse multi-collapse" id="multiCollapseExample' . $category . '">
+                        <a class="card-header" type="button" data-toggle="collapse" data-target="#' . $category . '"
+                           aria-expanded="false" aria-controls="' . $category . '">' . $category . '</a>
+                        <div class="collapse multi-collapse" id="' . $category . '">
                             <div class="card-body">
                                <ul>' . $list . ' </ul>
                             </div>
@@ -62,7 +62,7 @@ class DisplayIngredients
         $accordion .= '</div>';
         $accordion = '<input type="button" class="choiceBtn" id="expandAll" data-toggle="collapse"
                        data-target=".multi-collapse" aria-expanded="false"
-                       aria-controls="multiCollapseExample' . $category . ' multiCollapseExample' . $category . '" value="Expand All">
+                       aria-controls="' . $category . '" value="Expand All">
                        <div class="accordion" id="accordionExample">' . $accordion;
         return $accordion;
     }

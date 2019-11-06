@@ -7,6 +7,12 @@ namespace BreadAndIfit\Ingredients;
 use BreadAndIfit\Interfaces\GatewayInterface;
 class IngredientGateway implements GatewayInterface
 {
+    static public function sendDataReturnResponse(array $ingredients): string
+    {
+        $recipes = self::sendDataToAPI(self::formatData($ingredients));
+        return $recipes;
+    }
+
     static private function formatData(array $ingredients): string
     {
         $url = "http://www.recipepuppy.com/api/?i=";
@@ -32,12 +38,5 @@ class IngredientGateway implements GatewayInterface
         }
         curl_close($ch);
         return $return;
-    }
-
-    static public function sendDataReturnResponse(array $ingredients): string
-    {
-        $recipes = self::sendDataToAPI(self::formatData($ingredients));
-        return $recipes;
-
     }
 }

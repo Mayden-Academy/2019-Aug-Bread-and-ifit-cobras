@@ -46,6 +46,7 @@ $accentColor2: #DECBA4;
 aside {
   height: 100vh;
   background-image: -webkit-linear-gradient($gradientColor1, $gradientColor2);
+  overflow: auto;
 }
 
 body {
@@ -54,13 +55,16 @@ body {
 
 #accordionExample {
   text-align: left;
-  background-image: -webkit-linear-gradient($accentColor1, $accentColor2);
+  background-image: -webkit-linear-gradient($secondaryColor, $gradientColor1);
   border-radius: 5px;
+
+  .card-body {
+    padding: 5px 0 5px 30px;
+  }
 
   .card {
     background: transparent;
-    color: $secondaryColor;
-    text-align: center;
+    color: $accentColor1;
 
     .collapse {
       text-align: left;
@@ -69,7 +73,7 @@ body {
 
   .btn-link {
     font-weight: bold;
-    color: $secondaryColor;
+    color: $accentColor1;
   }
 
   .btn-link:hover {
@@ -88,10 +92,12 @@ body {
   overflow: hidden;
 }
 
-#getReciepeBtn {
-  margin-top: 100px;
-  margin-bottom: 10px;
-  //font-size: 20px;
+#getRecipeBtn {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  margin-bottom: 25px;
+  padding: 5px 0;
 }
 
 form{
@@ -110,7 +116,7 @@ main.col-9 {
 }
 
 #expandAll {
-  margin-top: 30px;
   width: 150px;
   border-radius: 5px 5px 0 0;
+  margin-top: 100px;
 }

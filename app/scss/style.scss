@@ -2,6 +2,10 @@ $primaryColor: red;
 $secondaryColor: #ffffff;
 $gradientColor1: #d7d2cc;
 $gradientColor2: #304352;
+$accentColor1: #3E5151;
+$accentColor2: #DECBA4;
+
+
 *{
   font-family: 'Raleway', sans-serif;
 }
@@ -13,12 +17,13 @@ $gradientColor2: #304352;
   width: 100%;
   position: fixed;
 
-  .nav-link{
+  .nav-link {
     color: black;
     padding-top: 1.8rem;
     font-size: 1.2rem;
   }
-  #title{
+
+  #title {
     font-size: 2rem;
     padding-top: 1rem;
     background: -webkit-linear-gradient(right, $gradientColor1, $gradientColor2);
@@ -26,6 +31,7 @@ $gradientColor2: #304352;
     -webkit-text-fill-color: transparent;
   }
 }
+
 .nav-transform {
   height: 85px;
   transform: rotate(1.5deg);
@@ -40,7 +46,6 @@ $gradientColor2: #304352;
 aside {
   height: 100vh;
   background-image: -webkit-linear-gradient($gradientColor1, $gradientColor2);
-
 }
 
 body {
@@ -50,10 +55,22 @@ body {
 #accordionExample {
   margin-top: 20px;
   text-align: left;
-  color: #ff0066;
+  background-image: -webkit-linear-gradient($accentColor1, $accentColor2);
+  border-radius: 5px;
+
+  .card {
+    background: transparent;
+    color: $secondaryColor;
+    text-align: center;
+
+    .collapse {
+      text-align: left;
+    }
+  }
 
   .btn-link {
-    color: $gradientColor2;
+    font-weight: bold;
+    color: $secondaryColor;
   }
 
   .btn-link:hover {
@@ -61,19 +78,18 @@ body {
   }
 }
 
-#carouselExampleControls{
+#carouselExampleControls {
   padding: 0;
 }
 
-.carousel-inner{
+.carousel-inner {
   width:100vw;
   height:100vh;
   object-fit: cover;
   overflow: hidden;
 }
 
-
-#getReciepeBtn{
+#getReciepeBtn {
   margin-top: 100px;
   margin-bottom: 10px;
   //font-size: 20px;
@@ -83,14 +99,13 @@ form{
   text-align: center;
 }
 
-.choiceBtn{
+.choiceBtn {
   background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 5px 10px;
   border: none;
-
 }
 
-main.col-9{
+main.col-9 {
   padding-left:0;
 }

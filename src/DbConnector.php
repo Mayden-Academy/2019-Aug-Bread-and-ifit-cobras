@@ -9,7 +9,8 @@ class DbConnector
      *
      * @return \PDO returns a PDO connection to the database
      */
-    public static function getDatabase(): \PDO {
+    public static function getDatabase(): \PDO
+    {
         $db = new \PDO ('mysql:host=db; dbname=ingredients', 'root', 'password');
 
         $db->setAttribute(\PDO::ATTR_DEFAULT_FETCH_MODE, \PDO::FETCH_ASSOC);

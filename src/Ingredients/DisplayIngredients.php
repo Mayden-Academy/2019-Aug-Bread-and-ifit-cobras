@@ -1,8 +1,6 @@
 <?php
 
-
 namespace BreadAndIfit\Ingredients;
-
 
 class DisplayIngredients
 {
@@ -12,15 +10,13 @@ class DisplayIngredients
      * @param array $ingredients is the array of objects that came from the database.
      * @return string is the outputted accordion.
      */
-
-    public static function displayIngredients(array $ingredients): string {
-
+    public static function displayIngredients(array $ingredients): string
+    {
         $ingredientSorted = self::formatData($ingredients);
 
         $output = self::outputHTML($ingredientSorted);
 
         return $output;
-
     }
 
     /**
@@ -30,7 +26,8 @@ class DisplayIngredients
      * @return array is the formatted array.
      */
 
-    private static function formatData(array $ingredients): array {
+    private static function formatData(array $ingredients): array
+    {
         $ingredientSorted = [];
         foreach ($ingredients as $ingredient) {
             $ingredientSorted[$ingredient->getCategory()][] = $ingredient->getName();
@@ -44,7 +41,8 @@ class DisplayIngredients
      * @return string is the formatted accordion using $ingredientSorted.
      */
 
-    private static function outputHTML(array $ingredientSorted): string {
+    private static function outputHTML(array $ingredientSorted): string
+    {
         $accordion = '<div class="accordion" id="accordionExample">';
         foreach ($ingredientSorted as $category => $array){
             $list = '';
@@ -69,9 +67,7 @@ class DisplayIngredients
                         </div>
                     </div>';
         }
-
         $accordion .= '</div>';
-
         return $accordion;
     }
 }

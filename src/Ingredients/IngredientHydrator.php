@@ -1,8 +1,6 @@
 <?php
 
-
 namespace BreadAndIfit\Ingredients;
-
 
 class IngredientHydrator
 {
@@ -12,7 +10,8 @@ class IngredientHydrator
      * @param \PDO $db is the database variable established in DBConnector
      * @return array is the array of objects returned from the DB.
      */
-    public static function getIngredients(\PDO $db): array {
+    public static function getIngredients(\PDO $db): array
+    {
         $query = $db->query('SELECT `id`, `name`, `category` FROM ingredients');
 
         $query->setFetchMode(\PDO::FETCH_CLASS, '\BreadAndIfit\Ingredients\Ingredient');

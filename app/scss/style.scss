@@ -12,7 +12,7 @@ $submitColor: #3ae8a5;
 
 .nav {
   background-color: $secondaryColor;
-  z-index: 10;
+  z-index: 200;
   height: 50px;
   width: 100%;
   position: fixed;
@@ -40,7 +40,7 @@ $submitColor: #3ae8a5;
   top: 0;
   left: 0;
   background-color: $secondaryColor;
-  z-index: 5;
+  z-index: 100;
 }
 
 aside {
@@ -100,7 +100,7 @@ body {
   padding: 5px 0;
   background-color: $submitColor;
   color: $gradientColor2;
-  z-index: 100;
+  z-index: 300;
 }
 
 form{

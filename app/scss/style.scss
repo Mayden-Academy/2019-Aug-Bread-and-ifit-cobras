@@ -116,11 +116,14 @@ main.col-9 {
 }
 
 .recipe {
-  width: 50%;
-  margin: 0 auto;
+  width: 80%;
+  margin: 120px auto 0 auto;
   border-radius: 10px;
   padding: 20px;
   border: 3px solid $accentColor1;
+  background-color: #ffffff;
+  //margin-top: 120px;
+
 
   h5 {
     text-align: center;
@@ -136,6 +139,14 @@ main.col-9 {
   }
 }
 
+#mainPannel {
+  background-image: url("../../res/images/ifit1.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
 #linkToRecipeBtn {
   background-color: $accentColor1;
   border: 1px solid $accentColor1;

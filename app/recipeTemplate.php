@@ -13,16 +13,7 @@
     <script type="text/javascript" src="js/dist/main.js"></script>
 </head>
 <body>
-    <div class="row recipe">
-            <div class="col-10 col-lg-4">
-                <img src="../res/images/food.jpg" alt="...">
-            </div>
-            <div class="col-10 col-lg-8">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate debitis ea eaque, hic ipsum magnam, nesciunt nobis nulla, quas quibusdam sed vitae voluptate. Autem excepturi laudantium necessitatibus neque rem.</p>
-                <a id="linkToRecipeBtn" href="#" class="btn btn-primary float-right">Go somewhere</a>
-            </div>
-    </div>
+
 </body>
 </html>
 

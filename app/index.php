@@ -25,9 +25,13 @@
 
     $accordion = DisplayIngredients::displayIngredients($ingredients);
 
-    $validator = IngredientValidator::checkUserInput();
+    $validator = IngredientValidator::checkUserInput($_POST);
 
-    echo $validator;
+    if ($validator){
+        // call IngredientGateway($_POST['check_list']);
+    } else {
+        // refresh the page
+    }
 
     echo $accordion;
 

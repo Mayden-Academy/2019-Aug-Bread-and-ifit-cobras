@@ -25,7 +25,6 @@ class DisplayIngredients
      * @param array $ingredients is the array of objects that came from the database.
      * @return array is the formatted array.
      */
-
     private static function formatData(array $ingredients): array
     {
         $ingredientSorted = [];
@@ -40,7 +39,6 @@ class DisplayIngredients
      * FormatData
      * @return string is the formatted accordion using $ingredientSorted.
      */
-
     private static function outputHTML(array $ingredientSorted): string
     {
         $accordion = '<div class="accordion" id="accordionExample">';

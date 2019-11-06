@@ -6,19 +6,23 @@ namespace BreadAndIfit\Ingredients;
 
 class IngredientValidator
 {
-    public static function checkUserInput()
+    public static function checkUserInput($post): bool
     {
-        if (!empty($_POST['check_list'])) {
-//            var_dump($_POST['check_list']);
+        if (!empty($post['check_list'])) {
             $checkArray = [];
-            foreach ($_POST['check_list'] as $check) {
-                $check = htmlentities($check);
-                if (strlen($check) > 25 || preg_match('/\s/', $check)) {
-                    $checkArray[] = false;
-                } else {
+            foreach ($post['check_list'] as $check) {
+                $newCheck = htmlentities($check);
+                if (strlen($check) < 25 && !preg_match('/\s/', $check) && $newCheck == $check) {
                     $checkArray[] = true;
+                } else {
+                    $checkArray[] = false;
                 }
-           }
+            }
+            if (!(in_array(false, $checkArray))) {
+                return true;
+            } else {
+                return false;
+            }
         }
     }
 }

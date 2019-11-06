@@ -18,8 +18,6 @@ class DisplayIngredientsTest extends TestCase
 
         $result = DisplayIngredients::displayIngredients([$ingredientMock]);
 
-        var_dump($result);
-
         $this->assertContains($result,
             '<div class="accordion" id="accordionExample"><div class="card">
                         <div class="card-header" id="headingOne">

@@ -18,8 +18,6 @@ class DisplayIngredientsTest extends TestCase
 
         $result = DisplayIngredients::displayIngredients([$ingredientMock]);
 
-        var_dump($result);
-
         $this->assertContains($result,
             '<div class="accordion" id="accordionExample"><div class="card">
                         <div class="card-header" id="headingOne">
@@ -38,19 +36,3 @@ class DisplayIngredientsTest extends TestCase
                     </div></div>');
     }
 }
-
-
-
-
-
-
-
-////        new class() extends Ingredient {
-//            protected $id = 1;
-//            protected $name =  'carrot';
-//            protected $category = 'Vegetable';
-//        };
-
-//        $result = DisplayIngredients::displayIngredients(['Vegetable' => $carrot]);
-//
-

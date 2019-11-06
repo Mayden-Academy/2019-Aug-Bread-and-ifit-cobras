@@ -11,8 +11,7 @@ class IngredientGateway implements GatewayInterface
     {
         $url = "http://www.recipepuppy.com/api/?i=";
         foreach ($ingredients as $ingredient) {
-            $url .= $ingredient;
-            $url .= ',';
+            $url .= $ingredient . ',';
         }
         $url = substr($url, 0, -1);
         return $url;

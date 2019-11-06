@@ -88,7 +88,7 @@ body {
   overflow: hidden;
 }
 
-#getReciepeBtn {
+#getRecipeBtn {
   margin-top: 100px;
   margin-bottom: 10px;
   //font-size: 20px;
@@ -114,3 +114,30 @@ main.col-9 {
   width: 150px;
   border-radius: 5px 5px 0 0;
 }
+
+.recipe {
+  width: 50%;
+  margin: 0 auto;
+  border-radius: 10px;
+  padding: 20px;
+  border: 3px solid $accentColor1;
+
+  h5 {
+    text-align: center;
+    font-weight: bold;
+    background: -webkit-linear-gradient(right, $gradientColor1, $gradientColor2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+  }
+
+  img {
+    border-radius: 10px;
+  }
+}
+
+#linkToRecipeBtn {
+  background-color: $accentColor1;
+  border: 1px solid $accentColor1;
+}
+

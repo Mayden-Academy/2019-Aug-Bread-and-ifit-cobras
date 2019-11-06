@@ -47,7 +47,7 @@ class DisplayIngredients
         foreach ($ingredientSorted as $category => $array){
             $list = '';
             foreach ($array as $key => $value){
-                $list .= '<input type="checkbox">'.$value.'</input>';
+                $list .= '<input type="checkbox" id="'.$value.'" name="check_list[]" value="'.$value.'">'.$value.'</input>';
             }
         $accordion .= '<div class="card">
                         <div class="card-header" id="headingOne">

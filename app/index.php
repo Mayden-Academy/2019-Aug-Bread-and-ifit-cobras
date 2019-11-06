@@ -31,7 +31,7 @@
         <aside class="col-2 justify-content-center">
             <form>
                 <input class="choiceBtn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">
-                <input class="choiceBtn" id="expandAll" data-toggle="collapse"
+                <input class="choiceBtn" type="button" id="expandAll" data-toggle="collapse"
                        data-target=".multi-collapse" aria-expanded="false"
                        aria-controls="multiCollapseExample1 multiCollapseExample2" value="Expand All">
                 <div class="accordion" id="accordionExample">

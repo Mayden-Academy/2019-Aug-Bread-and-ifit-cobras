@@ -48,87 +48,23 @@ class DisplayIngredients
             $list = '';
             $cats .= $category . ' ';
             foreach ($array as $key => $value) {
-                $list .= '<div><input type="checkbox" value="' . $value . '" name="' . $value . '"><span class="ingredient">' . $value . '</span></input></div>';
+                $list .= '<input type="checkbox" value="' . $value . '" name="' . $value . '"><span class="ingredient">' . $value . '</span></input>';
             }
             $accordion .= '<div class="card">
-                        <div class="card-header">
-                             <h2 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse' . $category . '" aria-expanded="true" aria-controls="collapse' . $category . '">'
-                . $category .
-                '</button>
-                              </h2>
-                        </div>
-
-                         <div id="collapse' . $category . '" class="collapse multi-collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                         <div class="card card-body">
-                         <ul>' . $list . ' </ul>
-                         </div>
-                        </div>
-                    </div>
-';
+                        <a class="card-header" type="button" data-toggle="collapse" data-target="#multiCollapseExample' . $category . '"
+                           aria-expanded="false" aria-controls="multiCollapseExample' . $category . '">' . $category . '</a>
+                        <div class="collapse multi-collapse" id="multiCollapseExample' . $category . '">
+                            <div class="card-body">
+                               <ul>' . $list . ' </ul>
+                            </div>
+                            </div>';
         }
         $accordion .= '</div>';
-        $accordion = '<input class="choiceBtn" id="expandAll" data-toggle="collapse"  data-target=".multi-collapse" aria-expanded="false"
-                      aria-controls="' . $cats . '" value="Expand All">
+        $accordion = '<input class="choiceBtn" id="expandAll" data-toggle="collapse"
+                       data-target=".multi-collapse" aria-expanded="false"
+                       aria-controls="multiCollapseExample' . $category . ' multiCollapseExample' . $category . '" value="Expand All">
                        <div class="accordion" id="accordionExample">' . $accordion;
-        echo $cats;
+
         return $accordion;
     }
 }
-
-
-//'<div class="accordion" id="accordionExample">
-//                    <div class="card">
-//                        <a class="card-header" type="button" data-toggle="collapse" data-target="' . $category . '" aria-expanded="true" aria-controls="collapse">' . $category . '</a>
-//                        <div class="collapse multi-collapse" id="' . $category . '">
-//                            <div class="card-body">
-//                               <ul>
-//                              ' . $list . '
-//                               </ul>
-//                            </div>
-//                        </div>
-//                    </div>
-//                </div>'
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-//}
-//<div class="card">
-//                        <div class="card-header">
-//                             <h2 class="mb-0">
-//                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse'.$category.'" aria-expanded="true" aria-controls="collapse'.$category.'">'
-//                                    . $category .
-//                                '</button>
-//                              </h2>
-//                        </div>
-//
-//                         <div id="collapse'.$category.'" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-//                         <div class="card-body">
-//                         <ul>
-//' . $list . '
-//                         </ul>
-//                         </div>
-//                        </div>
-//                    </div>
-//<div class="card">
-//                        <a class="card-header" id="headingOne" type="button" data-toggle="collapse" data-target="#multiCollapseExample1"
-//                           aria-expanded="false" aria-controls="multiCollapseExample2">'. $category .'</a>
-//                        <div class="collapse multi-collapse" id="multiCollapseExample1">
-//                            <div class="card-body">
-//'. $list .'
-//                            </div>
-//                        </div>
-//                    </div>

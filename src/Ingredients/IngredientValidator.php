@@ -3,9 +3,13 @@
 
 namespace BreadAndIfit\Ingredients;
 
-
 class IngredientValidator
 {
+    /**
+     * This method checks user supplied data and validates against criteria
+     * @param $post containing user selected ingredients
+     * @return bool true if passes validation, otherwise false
+     */
     public static function checkUserInput($post): bool
     {
         if (!empty($post['check_list'])) {

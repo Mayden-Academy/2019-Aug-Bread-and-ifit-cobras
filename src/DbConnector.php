@@ -4,6 +4,11 @@ namespace BreadAndIfit;
 
 class DbConnector
 {
+    /**
+     * This methods establishes a connection to the database
+     *
+     * @return \PDO returns a PDO connection to the database
+     */
     public static function getDatabase(): \PDO {
         $db = new \PDO ('mysql:host=db; dbname=ingredients', 'root', 'password');
 

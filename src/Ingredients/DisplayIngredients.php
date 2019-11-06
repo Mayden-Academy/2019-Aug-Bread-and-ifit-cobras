@@ -16,6 +16,13 @@ class DisplayIngredients
 
     }
 
+    /**
+     * This method formats the array of data into a multidimensional associative array of ingredients
+     * organised by their category.
+     * @param array $ingredients is the array of objects that came from the database.
+     * @return array
+     */
+
     private static function formatData(array $ingredients): array {
         $ingredientSorted = [];
         foreach ($ingredients as $ingredient) {
@@ -23,6 +30,12 @@ class DisplayIngredients
         }
         return $ingredientSorted;
     }
+
+    /**
+     * @param array $ingredientSorted is the multidimensional associative array returned out of
+     * FormatData
+     * @return string is the formatted accordion using $ingredientSorted.
+     */
 
     private static function outputHTML(array $ingredientSorted): string {
         $accordion = '<div class="accordion" id="accordionExample">';

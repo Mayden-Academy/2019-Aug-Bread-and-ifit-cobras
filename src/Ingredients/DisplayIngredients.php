@@ -48,7 +48,7 @@ class DisplayIngredients
             $list = '';
             $cats .= $category . ' ';
             foreach ($array as $key => $value) {
-                $list .= '<input type="checkbox" value="' . $value . '" name="' . $value . '"><span class="ingredient">' . $value . '</span></input>';
+                $list .= '<div><input type="checkbox" value="' . $value . '" name="' . $value . '"><span class="ingredient">'.' '. $value . '</span></input></div>';
             }
             $accordion .= '<div class="card">
                         <a class="card-header" type="button" data-toggle="collapse" data-target="#multiCollapseExample' . $category . '"
@@ -60,11 +60,10 @@ class DisplayIngredients
                             </div>';
         }
         $accordion .= '</div>';
-        $accordion = '<input class="choiceBtn" id="expandAll" data-toggle="collapse"
+        $accordion = '<input type="button" class="choiceBtn" id="expandAll" data-toggle="collapse"
                        data-target=".multi-collapse" aria-expanded="false"
                        aria-controls="multiCollapseExample' . $category . ' multiCollapseExample' . $category . '" value="Expand All">
                        <div class="accordion" id="accordionExample">' . $accordion;
-
         return $accordion;
     }
 }

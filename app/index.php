@@ -30,7 +30,6 @@
                 require('../vendor/autoload.php');
                 use BreadAndIfit\DbConnector;
                 use BreadAndIfit\Ingredients\DisplayIngredients;
-                use BreadAndIfit\Ingredients\Ingredient;
                 use BreadAndIfit\Ingredients\IngredientHydrator;
 
                 $db = DbConnector::getDatabase();

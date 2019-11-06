@@ -8,6 +8,8 @@ use BreadAndIfit\Interfaces\GatewayInterface;
 class IngredientGateway implements GatewayInterface
 {
     /**
+     * Gets data from API
+     *
      * @param array $ingredients The list of user selected ingredients
      * @return string JSON of recipes
      */
@@ -18,6 +20,8 @@ class IngredientGateway implements GatewayInterface
     }
 
     /**
+     * Formats ingredients array into url for http request
+     *
      * @param array $ingredients The list of user selected ingredients
      * @return string returns url for API filled with query data
      */
@@ -32,6 +36,8 @@ class IngredientGateway implements GatewayInterface
     }
 
     /**
+     * Takes url and sends request to API
+     *
      * @param string $url takes url from format data function
      * @return string JSON of recipes or error message if API unreachable
      */

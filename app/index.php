@@ -50,9 +50,9 @@ use BreadAndIfit\Ingredients\IngredientGateway;
             <?php
             if (IngredientValidator::checkUserInput($_POST)){
                 $response = BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST);
-                $recipies = json_decode($response);
-                if (\BreadAndIfit\Ingredients\DisplayRecipes::validateRecipe($recipies)) {
-                    echo BreadAndIfit\Ingredients\DisplayRecipes::outputHTML($recipies->results);
+                $recipes = json_decode($response);
+                if (\BreadAndIfit\Ingredients\DisplayRecipes::validateRecipe($recipes)) {
+                    echo BreadAndIfit\Ingredients\DisplayRecipes::outputHTML($recipes->results);
                 } else {
                     echo '<div id="mainPannel">
                             <div class="row recipe mx-auto">

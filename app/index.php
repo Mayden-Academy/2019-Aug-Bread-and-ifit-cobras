@@ -3,6 +3,7 @@ require('../vendor/autoload.php');
 use BreadAndIfit\DbConnector;
 use BreadAndIfit\Ingredients\DisplayIngredients;
 use BreadAndIfit\Ingredients\IngredientHydrator;
+use BreadAndIfit\Ingredients\IngredientValidator;
 ?>
 
 <!DOCTYPE html>
@@ -33,7 +34,16 @@ use BreadAndIfit\Ingredients\IngredientHydrator;
                 <?php
                 $db = DbConnector::getDatabase();
                 $ingredients = IngredientHydrator::getIngredients($db);
-                echo  DisplayIngredients::displayIngredients($ingredients);
+                echo DisplayIngredients::displayIngredients($ingredients);
+                $validator = IngredientValidator::checkUserInput($_POST);
+//                if ($validator){
+//                    // call IngredientGateway($_POST['check_list']);
+//                } else {
+//                    // refresh the page
+//                }
+//
+//                echo $accordion;
+
                 ?>
             </form>
             <input class="choice-btn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">
@@ -65,4 +75,3 @@ use BreadAndIfit\Ingredients\IngredientHydrator;
 </div>
 </body>
 </html>
-

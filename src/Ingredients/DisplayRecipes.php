@@ -38,15 +38,11 @@ class DisplayRecipes
                 $recipeItem = preg_replace('/[[:^print:]]/', '', $recipeItem);
                 $newRecipeItem = htmlentities($recipeItem);
                 if ($newRecipeItem != $recipeItem) {
-                    var_dump($newRecipeItem);
-                    var_dump($recipeItem);
                     return false;
                 }
             }
         }
-
         return true;
-
     }
 
     private static function outputHTML($recipes): string
@@ -63,7 +59,6 @@ class DisplayRecipes
 
           $recipeCard = '<div id="mainPannel">';
 
-
           foreach ($recipes as $recipe) {
               if (!$recipe->thumbnail) {
                   $recipe->thumbnail = '../res/images/noRecipe.jpg';
@@ -79,14 +74,9 @@ class DisplayRecipes
                         </div>
                     </div>';
           }
-
           $recipeCard .= '</div>';
-
 
           return $recipeCard;
       }
     }
-
-
-
 }

@@ -1,9 +1,9 @@
-$primaryColor: red;
 $secondaryColor: #ffffff;
 $gradientColor1: #d7d2cc;
 $gradientColor2: #304352;
 $accentColor1: #3E5151;
 $accentColor2: #DECBA4;
+$submitColor: #3ae8a5;
 
 
 *{
@@ -12,13 +12,13 @@ $accentColor2: #DECBA4;
 
 .nav {
   background-color: $secondaryColor;
-  z-index: 10;
+  z-index: 200;
   height: 50px;
   width: 100%;
   position: fixed;
 
   .nav-link {
-    color: black;
+    color: #000000;
     padding-top: 1.8rem;
     font-size: 1.2rem;
   }
@@ -40,22 +40,26 @@ $accentColor2: #DECBA4;
   top: 0;
   left: 0;
   background-color: $secondaryColor;
-  z-index: 5;
+  z-index: 100;
 }
 
 aside {
   background-image: -webkit-linear-gradient($gradientColor1, $gradientColor2);
+  overflow: auto;
 }
 
 #accordionExample {
   text-align: left;
-  background-image: -webkit-linear-gradient($accentColor1, $accentColor2);
+  background-image: -webkit-linear-gradient($secondaryColor, $gradientColor1);
   border-radius: 5px;
+
+  .card-body {
+    padding: 5px 0 5px 30px;
+  }
 
   .card {
     background: transparent;
-    color: $secondaryColor;
-    text-align: center;
+    color: $accentColor1;
 
     .collapse {
       text-align: left;
@@ -64,7 +68,7 @@ aside {
 
   .btn-link {
     font-weight: bold;
-    color: $secondaryColor;
+    color: $accentColor1;
   }
 
   .btn-link:hover {
@@ -84,16 +88,21 @@ aside {
 }
 
 #getRecipeBtn {
-  margin-top: 100px;
-  margin-bottom: 10px;
-  //font-size: 20px;
+  position: fixed;
+  bottom: 20px;
+  left: 0;
+  padding: 5px 0;
+  background-color: $submitColor;
+  color: $gradientColor2;
+  z-index: 300;
 }
 
 form{
   text-align: center;
+  padding-bottom: 55px;
 }
 
-.choiceBtn {
+.choice-btn {
   background-color: $accentColor1;
   color: white;
   padding: 5px 10px;
@@ -101,13 +110,13 @@ form{
 }
 
 main.col-9 {
-  padding-left:0;
+  padding-left: 0;
 }
 
 #expandAll {
-  margin-top: 30px;
   width: 150px;
   border-radius: 5px 5px 0 0;
+  margin-top: 100px;
 }
 
 .recipe {
@@ -117,7 +126,6 @@ main.col-9 {
   padding: 20px;
   border: 3px solid $accentColor1;
   background-color: rgba(255, 255, 255, 0.9);
-  //margin-top: 120px;
 
 
   h5 {
@@ -146,4 +154,9 @@ main.col-9 {
 #linkToRecipeBtn {
   background-color: $accentColor1;
   border: 1px solid $accentColor1;
+  margin-top: 100px;
+}
+
+ul{
+  padding-left: 0;
 }

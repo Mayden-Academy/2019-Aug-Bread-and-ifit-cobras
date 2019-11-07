@@ -5,8 +5,7 @@ namespace BreadAndIfit\Ingredients;
 class DisplayIngredients
 {
     /**
-     * This method calls the functions below and its purpose is to be called in the index.php to make
-     * the accordion of ingredients.
+     * Calls formatData and outputHtml to generate the accordion of ingredients.
      * @param array $ingredients is the array of objects that came from the database.
      * @return string is the outputted accordion.
      */
@@ -14,9 +13,7 @@ class DisplayIngredients
     {
         $ingredientSorted = self::formatData($ingredients);
 
-        $output = self::outputHTML($ingredientSorted);
-
-        return $output;
+        return self::outputHTML($ingredientSorted);
     }
 
     /**
@@ -29,7 +26,7 @@ class DisplayIngredients
     {
         $ingredientSorted = [];
         foreach ($ingredients as $ingredient) {
-            $ingredientSorted[$ingredient->getCategory()][] = $ingredient->getName();
+            $ingredientSorted[$ingredient->getCategory()][] = $ingredient;
         }
         return $ingredientSorted;
     }
@@ -48,7 +45,8 @@ class DisplayIngredients
             $list = '';
             $cats .= $category . ' ';
             foreach ($array as $key => $value) {
-                $list .= '<div><input type="checkbox" value="' . $value . '" name="' . $value . '"><span class="ingredient">'.' '. $value . '</span></input></div>';
+                $value = $value->getName();
+                $list .= '<label><input type="checkbox" value="' . $value . '" name="' . $value . '"><span class="ingredient">'.' '. $value . '</span></input></label>';
             }
             $accordion .= '<div class="card">
                         <a class="card-header" type="button" data-toggle="collapse" data-target="#' . $category . '"
@@ -59,11 +57,11 @@ class DisplayIngredients
                             </div>
                             </div>';
         }
-        $accordion .= '</div>';
-        $accordion = '<input type="button" class="choiceBtn" id="expandAll" data-toggle="collapse"
+            $accordion .= '</div>';
+            $accordion = '<input type="button" class="choiceBtn" id="expandAll" data-toggle="collapse"
                        data-target=".multi-collapse" aria-expanded="false"
                        aria-controls="' . $cats . '" value="Toggle All">
                        <div class="accordion" id="accordionExample">' . $accordion;
-        return $accordion;
-    }
+            return $accordion;
+        }
 }

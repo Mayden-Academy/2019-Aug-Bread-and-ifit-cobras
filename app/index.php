@@ -1,10 +1,15 @@
+<?php
+require('../vendor/autoload.php');
+use BreadAndIfit\DbConnector;
+use BreadAndIfit\Ingredients\DisplayIngredients;
+use BreadAndIfit\Ingredients\IngredientHydrator;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Bread and Ifits</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <script type="text/javascript" src="js/dist/main.js"></script>
@@ -25,23 +30,13 @@
     <div class="row" id="mainContent">
         <aside class="col-2 justify-content-center">
             <form method="post" id="ingredientsForm">
-                <input class="choiceBtn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">
                 <?php
-                require('../vendor/autoload.php');
-                use BreadAndIfit\DbConnector;
-                use BreadAndIfit\Ingredients\DisplayIngredients;
-                use BreadAndIfit\Ingredients\IngredientHydrator;
-
                 $db = DbConnector::getDatabase();
-
                 $ingredients = IngredientHydrator::getIngredients($db);
-
-                $accordion = DisplayIngredients::displayIngredients($ingredients);
-
-                echo $accordion;
-
+                echo  DisplayIngredients::displayIngredients($ingredients);
                 ?>
             </form>
+            <input class="choiceBtn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">
         </aside>
         <main class="col-10">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">

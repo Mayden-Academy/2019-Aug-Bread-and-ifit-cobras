@@ -121,10 +121,10 @@ main.col-9 {
 }
 
 .recipe {
-  width: 80%;
+  width: 60%;
   margin: 40px auto;
   border-radius: 10px;
-  padding: 20px;
+  padding: 15px;
   border: 3px solid $accentColor1;
   background-color: rgba(255, 255, 255, 0.9);
 
@@ -155,9 +155,14 @@ main.col-9 {
 #linkToRecipeBtn {
   background-color: $accentColor1;
   border: 1px solid $accentColor1;
-  margin-top: 100px;
+  margin-top: 40px;
 }
 
 ul{
   padding-left: 0;
+}
+
+.recipe-thumbnail {
+  height: 150px;
+  width: 150px;
 }

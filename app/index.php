@@ -49,9 +49,19 @@ use BreadAndIfit\Ingredients\IngredientGateway;
         <main class="col-10">
             <?php
             if (IngredientValidator::checkUserInput($_POST)){
-                echo
-                BreadAndIfit\Ingredients\DisplayRecipes::outputRecipes
-                (BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST));
+                $response = BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST);
+                $recipies = json_decode($response);
+                if (\BreadAndIfit\Ingredients\DisplayRecipes::validateRecipe($recipies)) {
+                    echo BreadAndIfit\Ingredients\DisplayRecipes::outputHTML($recipies->results);
+                } else {
+                    echo '<div id="mainPannel">
+                            <div class="row recipe mx-auto">
+                                <div class="col-10 col-lg-8">
+                                    <h5 class="card-title">Invalid response received from puppy API</h5>                   
+                                </div>
+                            </div>
+                        </div>';
+                }
             } else {
                 echo '
                  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">

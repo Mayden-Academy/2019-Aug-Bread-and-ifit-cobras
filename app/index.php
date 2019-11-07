@@ -1,12 +1,11 @@
 <?php
 require('../vendor/autoload.php');
-
 use BreadAndIfit\DbConnector;
 use BreadAndIfit\Ingredients\DisplayIngredients;
 use BreadAndIfit\Ingredients\IngredientHydrator;
-
+use BreadAndIfit\Ingredients\IngredientValidator;
+use BreadAndIfit\Ingredients\IngredientGateway;
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,7 +36,6 @@ use BreadAndIfit\Ingredients\IngredientHydrator;
         book</a>
 </nav>
 <div class="nav-transform"></div>
-
 <div class="container-fluid">
     <div class="row" id="mainContent">
         <aside class="col-2 justify-content-center">
@@ -46,28 +44,18 @@ use BreadAndIfit\Ingredients\IngredientHydrator;
                 $db = DbConnector::getDatabase();
                 $ingredients = IngredientHydrator::getIngredients($db);
                 echo DisplayIngredients::displayIngredients($ingredients);
+                $validator = IngredientValidator::checkUserInput($_POST);
+                if ($validator){
+                    BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST);
+                }
                 ?>
             </form>
             <input class="choice-btn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">
         </aside>
         <main class="col-10">
-
             <?php
             if (!empty($_POST)){
-                echo \BreadAndIfit\Ingredients\DisplayRecipes::outputRecipes(\BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST));
-                // DisplayRecipes::outputRecipes();
-//                echo '<div id="mainPannel">
-//                    <div class="row recipe mx-auto">
-//                        <div class="col-10 col-lg-4">
-//                            <img src="../res/images/food.jpg" alt="...">
-//                        </div>
-//                        <div class="col-10 col-lg-8">
-//                            <h5 class="card-title">Card title</h5>
-//                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card\'s content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate debitis ea eaque, hic ipsum magnam, nesciunt nobis nulla, quas quibusdam sed vitae voluptate. Autem excepturi laudantium necessitatibus neque rem.</p>
-//                            <a id="linkToRecipeBtn" href="#" class="btn btn-primary float-right">Go somewhere</a>
-//                        </div>
-//                    </div>
-//                </div>';
+                echo BreadAndIfit\Ingredients\DisplayRecipes::outputRecipes(BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST));
             } else {
                 echo '
                  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">
@@ -90,8 +78,7 @@ use BreadAndIfit\Ingredients\IngredientHydrator;
                     <span class="carousel-control-next-icon" aria-hidden="true"></span>
                     <span class="sr-only">Next</span>
                 </a>
-            </div>
-                ';
+            </div>';
             }
             ?>
         </main>

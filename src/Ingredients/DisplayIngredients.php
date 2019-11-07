@@ -47,6 +47,7 @@ class DisplayIngredients
             foreach ($array as $key => $value) {
                 $value = $value->getName();
                 $list .= '<div><label><input type="checkbox" value="' . $value . '" name="' . $value . '"><span class="ingredient">'.' '. $value . '</span></label></div>';
+
             }
             $accordion .= '<div class="card">
                         <a class="card-header" type="button" data-toggle="collapse" data-target="#' . $category . '"

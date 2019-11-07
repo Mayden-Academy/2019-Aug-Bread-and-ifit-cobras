@@ -19,7 +19,7 @@ class DisplayIngredientsTest extends TestCase
         $result = DisplayIngredients::displayIngredients([$ingredientMock]);
 
         $this->assertContains($result,
-            '<input type="button" class="choiceBtn" id="expandAll" data-toggle="collapse"
+            '<input type="button" class="choice-btn" id="expandAll" data-toggle="collapse"
                        data-target=".multi-collapse" aria-expanded="false"
                        aria-controls="Vegetables " value="Toggle All">
                        <div class="accordion" id="accordionExample"><div class="card">

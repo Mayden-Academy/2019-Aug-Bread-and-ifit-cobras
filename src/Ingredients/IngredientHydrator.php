@@ -16,8 +16,6 @@ class IngredientHydrator
 
         $query->setFetchMode(\PDO::FETCH_CLASS, '\BreadAndIfit\Ingredients\Ingredient');
 
-        $ingredients = $query->fetchAll();
-
-        return $ingredients;
+        return $query->fetchAll();
     }
 }

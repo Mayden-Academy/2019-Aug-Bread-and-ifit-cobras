@@ -86,51 +86,13 @@
 
     <main class="col-9">
         <?php
-//        require_once('../src/Ingredients/IngredientGateway.php');
         require ('../vendor/autoload.php');
         $data = \BreadAndIfit\Ingredients\IngredientGateway::sendDataToAPI('http://www.recipepuppy.com/api/?i=tomato');
-//        var_dump($data);
 
-        $dataArray = explode('{',$data);
-//                var_dump($dataArray);
+        $data = json_decode($data);
 
-        //        echo gettype($jsonData);
-        array_shift($dataArray);
-        array_shift($dataArray);
+        var_dump($data->results[0]);
 
-        $array = [
-            [0]=> array(5) { 
-              [0]=> string(30) ""title":"Dehydrating Tomatoes"" 
-              [1]=> string(65) ""href":"http:\/\/www.recipezaar.com\/Dehydrating-Tomatoes-325795""
-              [2]=> string(22) ""ingredients":"tomato""
-              [3]=> string(54) ""thumbnail":"http:\/\/img.recipepuppy.com\/37134.jpg"}"
-              [4]=> string(0) ""]
-        $recipeArray = [];
-        foreach ($dataArray as $item) {
-            $item = explode(',',$item);
-//            foreach ($item as $subitem) {
-//                $subitem = explode(':', $subitem)[1];
-//                var_dump($subitem);
-//            }
-
-//            echo $item['title'] + '<br>';
-            array_push($recipeArray, $item);
-        }
-        var_dump($recipeArray);
-
-        exit;
-//        $recipes = json_decode($jsonData);
-
-//        var_dump($recipes);
-
-//        $string = '';
-//        foreach ($recipes as $recipe => $key) {
-////            echo $recipe + ' : ' + $key + '<br>';
-//            $string .= '<br>' + $recipe + ' : ' + $key + '<br>';
-//
-////            echo 'hello';
-//        }
-//        var_dump($recipes);
         ?>
         <div id="mainPannel">
 

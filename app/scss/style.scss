@@ -42,11 +42,17 @@ $submitColor: #3ae8a5;
   background-color: $secondaryColor;
   z-index: 100;
 }
-
+ 
 aside {
   background-image: -webkit-linear-gradient($gradientColor1, $gradientColor2);
   overflow: auto;
   height: 100vh;
+  width: 17%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow-x: hidden;
+  padding: 0 10px;
 }
 
 #accordionExample {
@@ -145,12 +151,9 @@ main.col-9 {
 
 #mainPannel {
   padding-top: 120px;
-  background-image: url("../../res/images/ifit1.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
+  background-color: $gradientColor1;
 }
 #linkToRecipeBtn {
   background-color: $accentColor1;

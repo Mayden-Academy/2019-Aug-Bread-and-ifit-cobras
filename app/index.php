@@ -38,20 +38,22 @@ use BreadAndIfit\Ingredients\IngredientGateway;
 <div class="nav-transform"></div>
 <div class="container-fluid">
     <div class="row" id="mainContent">
-        <aside class="col-2 justify-content-center">
-            <form method="post" id="ingredientsForm">
-                <?php
-                $db = DbConnector::getDatabase();
-                $ingredients = IngredientHydrator::getIngredients($db);
-                echo DisplayIngredients::displayIngredients($ingredients);
-                $validator = IngredientValidator::checkUserInput($_POST);
-                if ($validator){
-                    BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST);
-                }
-                ?>
-            </form>
-            <input class="choice-btn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">
-        </aside>
+        <div class="col-2">
+            <aside class="justify-content-center">
+                <form method="post" id="ingredientsForm">
+                    <?php
+                    $db = DbConnector::getDatabase();
+                    $ingredients = IngredientHydrator::getIngredients($db);
+                    echo DisplayIngredients::displayIngredients($ingredients);
+                    $validator = IngredientValidator::checkUserInput($_POST);
+                    if ($validator) {
+                        BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST);
+                    }
+                    ?>
+                </form>
+                <input class="choice-btn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">
+            </aside>
+        </div>
         <main class="col-10">
             <?php
             if (!empty($_POST)){

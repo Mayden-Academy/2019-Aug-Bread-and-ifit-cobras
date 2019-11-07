@@ -94,8 +94,9 @@ body {
 
 #getRecipeBtn {
   position: fixed;
-  bottom: 20px;
+  bottom: 0;
   left: 0;
+  margin-bottom: 25px;
   padding: 5px 0;
   background-color: $submitColor;
   color: $gradientColor2;
@@ -104,7 +105,6 @@ body {
 
 form{
   text-align: center;
-  padding-bottom: 55px;
 }
 
 .choiceBtn {

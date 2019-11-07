@@ -28,7 +28,8 @@ use BreadAndIfit\Ingredients\IngredientHydrator;
             crossorigin="anonymous"></script>
 </head>
 <body>
-
+<div>
+</div>
 <nav class="nav nav-pills flex-column flex-sm-row">
     <a class="col-2 flex-sm-fill text-sm-center nav-link" href="#">Recipe Finder</a>
     <a id="title" class="col-8 flex-sm-fill text-sm-center nav-link align-middle" href="#">Bread and Ifits.</a>
@@ -53,20 +54,20 @@ use BreadAndIfit\Ingredients\IngredientHydrator;
 
             <?php
             if (!empty($_POST)){
-                echo '<div id="mainPannel">
-                    <div class="row recipe mx-auto">
-                        <div class="col-10 col-lg-4">
-                            <img src="../res/images/food.jpg" alt="...">
-                        </div>
-                        <div class="col-10 col-lg-8">
-                            <h5 class="card-title">Card title</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card\'s content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate debitis ea eaque, hic ipsum magnam, nesciunt nobis nulla, quas quibusdam sed vitae voluptate. Autem excepturi laudantium necessitatibus neque rem.</p>
-                            <a id="linkToRecipeBtn" href="#" class="btn btn-primary float-right">Go somewhere</a>
-                        </div>
-                    </div>
-                    
-                    
-                </div>';
+                echo \BreadAndIfit\Ingredients\DisplayRecipes::outputRecipes(\BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST));
+                // DisplayRecipes::outputRecipes();
+//                echo '<div id="mainPannel">
+//                    <div class="row recipe mx-auto">
+//                        <div class="col-10 col-lg-4">
+//                            <img src="../res/images/food.jpg" alt="...">
+//                        </div>
+//                        <div class="col-10 col-lg-8">
+//                            <h5 class="card-title">Card title</h5>
+//                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card\'s content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate debitis ea eaque, hic ipsum magnam, nesciunt nobis nulla, quas quibusdam sed vitae voluptate. Autem excepturi laudantium necessitatibus neque rem.</p>
+//                            <a id="linkToRecipeBtn" href="#" class="btn btn-primary float-right">Go somewhere</a>
+//                        </div>
+//                    </div>
+//                </div>';
             } else {
                 echo '
                  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">

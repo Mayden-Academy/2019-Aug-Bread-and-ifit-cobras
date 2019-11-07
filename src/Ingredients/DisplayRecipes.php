@@ -38,8 +38,6 @@ class DisplayRecipes
                 $recipeItem = preg_replace('/[[:^print:]]/', '', $recipeItem);
                 $newRecipeItem = htmlentities($recipeItem);
                 if ($newRecipeItem != $recipeItem) {
-                    var_dump($newRecipeItem);
-                    var_dump($recipeItem);
                     return false;
                 }
             }
@@ -65,8 +63,6 @@ class DisplayRecipes
 
           foreach ($recipes as $recipe) {
 
-              var_dump( $recipe->thumbnail);
-
               $recipeCard .= '<div class="row recipe mx-auto">
                         <div class="col-10 col-lg-4">
                             <img src="' . $recipe->thumbnail . '" alt="...">
@@ -84,19 +80,6 @@ class DisplayRecipes
 
           return $recipeCard;
 
-//          return '<div id="mainPannel">
-//                    <div class="row recipe mx-auto">
-//                        <div class="col-10 col-lg-4">
-//                            <img src="../res/images/food.jpg" alt="...">
-//                        </div>
-//                        <div class="col-10 col-lg-8">
-//                            <h5 class="card-title">Card title</h5>
-//                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the cards content. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque cupiditate debitis ea eaque, hic ipsum magnam, nesciunt nobis nulla, quas quibusdam sed vitae voluptate. Autem excepturi laudantium necessitatibus neque rem.</p>
-//                            <a id="linkToRecipeBtn" href="#" class="btn btn-primary float-right">Go somewhere</a>
-//                        </div>
-//                    </div>
-//                </div>';
-          // recipe template
       }
     }
 }

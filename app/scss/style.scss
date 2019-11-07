@@ -145,12 +145,9 @@ main.col-9 {
 
 #mainPannel {
   padding-top: 120px;
-  background-image: url("../../res/images/ifit1.jpg");
-  background-size: cover;
-  background-position: center center;
-  background-repeat: no-repeat;
   width: 100%;
   height: 100%;
+  background-color: $gradientColor1;
 }
 #linkToRecipeBtn {
   background-color: $accentColor1;

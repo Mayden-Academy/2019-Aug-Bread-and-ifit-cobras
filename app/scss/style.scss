@@ -44,13 +44,9 @@ $submitColor: #3ae8a5;
 }
 
 aside {
-  height: 100vh;
   background-image: -webkit-linear-gradient($gradientColor1, $gradientColor2);
   overflow: auto;
-}
-
-body {
-  overflow: hidden;
+  height: 100vh;
 }
 
 #accordionExample {
@@ -122,4 +118,51 @@ main.col-9 {
   width: 150px;
   border-radius: 5px 5px 0 0;
   margin-top: 100px;
+}
+
+.recipe {
+  width: 60%;
+  margin: 40px auto;
+  border-radius: 10px;
+  padding: 15px;
+  border: 3px solid $accentColor1;
+  background-color: rgba(255, 255, 255, 0.9);
+
+
+  h5 {
+    text-align: center;
+    font-weight: bold;
+    background: -webkit-linear-gradient(right, $gradientColor1, $gradientColor2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 2rem;
+  }
+
+  img {
+    border-radius: 10px;
+  }
+}
+
+#mainPannel {
+  padding-top: 120px;
+  background-image: url("../../res/images/ifit1.jpg");
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 100%;
+}
+#linkToRecipeBtn {
+  background-color: $accentColor1;
+  border: 1px solid $accentColor1;
+  margin-top: 40px;
+}
+
+ul{
+  padding-left: 0;
+}
+
+.recipe-thumbnail {
+  height: 150px;
+  width: 150px;
 }

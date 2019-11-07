@@ -12,9 +12,9 @@ class IngredientValidator
      */
     public static function checkUserInput($post): bool
     {
-        if (!empty($post['check_list'])) {
+        if (!empty($post)) {
             $checkArray = [];
-            foreach ($post['check_list'] as $check) {
+            foreach ($post as $check) {
                 $newCheck = htmlentities($check);
                 if (strlen($check) < 25 && !preg_match('/\s/', $check) && $newCheck == $check) {
                     $checkArray[] = true;

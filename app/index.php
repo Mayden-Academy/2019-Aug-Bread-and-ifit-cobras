@@ -36,13 +36,13 @@ use BreadAndIfit\Ingredients\IngredientValidator;
                 $ingredients = IngredientHydrator::getIngredients($db);
                 echo DisplayIngredients::displayIngredients($ingredients);
                 $validator = IngredientValidator::checkUserInput($_POST);
-//                if ($validator){
-//                    // call IngredientGateway($_POST['check_list']);
-//                } else {
-//                    // refresh the page
-//                }
-//
-//                echo $accordion;
+                if ($validator){
+                    // Run the ingredient gateway
+                } else {
+                    // Cry
+                }
+
+
 
                 ?>
             </form>

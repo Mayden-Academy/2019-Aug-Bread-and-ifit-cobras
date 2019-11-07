@@ -12,9 +12,9 @@ class DisplayRecipes
      * @param $json API response in JSON format
      * @return string relevant recipes based on user selected ingredients or a error message string
      */
-    public static function outputRecipes($json)
+    public static function outputRecipes($recipes)
     {
-        $recipes = json_decode($json)->results;
+        print_r($recipes[0]);
 
         $validate = self::validateRecipe($recipes);
 

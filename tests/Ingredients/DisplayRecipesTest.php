@@ -8,16 +8,22 @@ use PHPUnit\Framework\TestCase;
 class DisplayRecipesTest extends TestCase
 {
     public function testDisplayRecipes_success() {
-        $thing = '{"title":"Recipe Puppy","version":0.1,"href":"http:/www.recipepuppy.com","results":[{"title":"French Bread Sausage Breakfast Roll","href":"http:/www.recipezaar.com/French-Bread-Sausage-Breakfast-Roll-175244","ingredients":"sausage","thumbnail":"http:/img.recipepuppy.com/573680.jpg"}]}';
-        $result = DisplayRecipes::outputRecipes($thing);
+        $thingArray = [];
+        $thing = new stdClass();
+        $thing->title = 'Beef Ribs with Fruity Barbecue Sauce';
+        $thing->href = 'http://www.kraftfoods.com/kf/recipes/beef-ribs-fruity-barbecue-54355.aspx';
+        $thing->ingredients = 'beef, steak sauce, ketchup, apricot preserves';
+        $thing->thumbnail = 'http://img.recipepuppy.com/631060.jpg';
+        array_push($thingArray, $thing);
+        $result = DisplayRecipes::outputRecipes($thingArray);
         $this->assertContains($result, '<div id="mainPannel"><div class="row recipe mx-auto">
                         <div class="col-10 col-lg-4">
-                            <img class="recipe-thumbnail" src="http:/img.recipepuppy.com/573680.jpg" alt="">
+                            <img class="recipe-thumbnail" src="http://img.recipepuppy.com/631060.jpg" alt="">
                         </div>
                         <div class="col-10 col-lg-8">
-                            <h5 class="card-title">French Bread Sausage Breakfast Roll</h5>
-                            <p class="card-text">Ingredients: sausage</p>
-                            <a id="linkToRecipeBtn" href="http:/www.recipezaar.com/French-Bread-Sausage-Breakfast-Roll-175244" class="btn btn-primary float-right">View recipe</a>
+                            <h5 class="card-title">Beef Ribs with Fruity Barbecue Sauce</h5>
+                            <p class="card-text">Ingredients: beef, steak sauce, ketchup, apricot preserves</p>
+                            <a id="linkToRecipeBtn" href="http://www.kraftfoods.com/kf/recipes/beef-ribs-fruity-barbecue-54355.aspx" class="btn btn-primary float-right">View recipe</a>
                         </div>
                     </div></div>');
     }

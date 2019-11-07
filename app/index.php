@@ -63,10 +63,10 @@ use BreadAndIfit\Ingredients\IngredientGateway;
                  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="../res/images/toast1.jpg" class="d-block w-100" alt="Toast!">
+                        <img src="../res/images/ifit1.jpg" class="d-block w-100" alt="Toast!">
                     </div>
                     <div class="carousel-item">
-                        <img src="../res/images/ifit1.jpg" class="d-block w-100" alt="half empty cupboard">
+                        <img src="../res/images/toast1.jpg" class="d-block w-100" alt="half empty cupboard">
                     </div>
                     <div class="carousel-item">
                         <img src="../res/images/toast2.jpg" class="d-block w-100" alt="EVEN MORE toast!">

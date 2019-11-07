@@ -54,10 +54,21 @@ use BreadAndIfit\Ingredients\IngredientGateway;
         </div>
         <main class="col-10">
             <?php
-            if (!empty($_POST)){
-                $returnedRecipes = BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST);
-                $returnedRecipes = json_decode($returnedRecipes)->results;
-                echo BreadAndIfit\Ingredients\DisplayRecipes::outputRecipes($returnedRecipes);
+
+            if (IngredientValidator::checkUserInput($_POST)){
+                $response = BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST);
+                $recipes = json_decode($response);
+                if (\BreadAndIfit\Ingredients\DisplayRecipes::validateRecipe($recipes)) {
+                    echo BreadAndIfit\Ingredients\DisplayRecipes::outputHTML($recipes->results);
+                } else {
+                    echo '<div id="mainPannel">
+                            <div class="row recipe mx-auto">
+                                <div class="col-10 col-lg-8">
+                                    <h5 class="card-title">Unexpected error, please try again</h5>
+                                </div>
+                            </div>
+                        </div>';
+                }
             } else {
                 echo '
                  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">

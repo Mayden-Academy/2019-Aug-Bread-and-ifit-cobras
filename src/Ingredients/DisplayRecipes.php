@@ -8,7 +8,6 @@ class DisplayRecipes
 {
     public static function outputRecipes($json)
     {
-
         $recipes = json_decode($json)->results;
 
         $validate = self::validateRecipe($recipes);
@@ -30,23 +29,9 @@ class DisplayRecipes
     {
         if (!is_array($recipes)) {
             return false;
+        } else {
+            return true;
         }
-
-        foreach ($recipes as $recipe) {
-            foreach ($recipe as $recipeItem) {
-                $recipeItem = strval($recipeItem);
-                $recipeItem = preg_replace('/[[:^print:]]/', '', $recipeItem);
-                $newRecipeItem = htmlentities($recipeItem);
-                if ($newRecipeItem != $recipeItem) {
-                    var_dump($newRecipeItem);
-                    var_dump($recipeItem);
-                    return false;
-                }
-            }
-        }
-
-        return true;
-
     }
 
     private static function outputHTML($recipes): string
@@ -87,6 +72,8 @@ class DisplayRecipes
       }
     }
 
-
-
 }
+
+
+
+

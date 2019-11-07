@@ -18,7 +18,8 @@ class Ingredient
         return $this->id;
     }
 
-    /** Gets the name of each ingredient.
+    /**
+     * Gets the name of each ingredient.
      *
      * @return string the name from the DB.
      */
@@ -27,7 +28,8 @@ class Ingredient
         return $this->name;
     }
 
-    /** Gets the category of each ingredient.
+    /**
+     * Gets the category of each ingredient.
      *
      * @return string the category from the DB.
      */

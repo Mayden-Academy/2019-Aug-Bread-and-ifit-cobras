@@ -15,8 +15,7 @@ class IngredientGateway implements GatewayInterface
      */
     static public function sendDataReturnResponse(array $ingredients): string
     {
-        $recipes = self::sendDataToAPI(self::formatData($ingredients));
-        return $recipes;
+        return self::sendDataToAPI(self::formatData($ingredients));
     }
 
     /**
@@ -49,6 +48,7 @@ class IngredientGateway implements GatewayInterface
         curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
         curl_setopt($ch, CURLOPT_FAILONERROR, true);
         $recipes = curl_exec($ch);
+
         if (curl_error($ch)) {
             $return = 'Something went wrong, please refresh the page and try again.';
         }else{

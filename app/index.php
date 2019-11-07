@@ -32,8 +32,6 @@ use BreadAndIfit\Ingredients\IngredientGateway;
 <nav class="nav nav-pills flex-column flex-sm-row">
     <a class="col-2 flex-sm-fill text-sm-center nav-link" href="#">Recipe Finder</a>
     <a id="title" class="col-8 flex-sm-fill text-sm-center nav-link align-middle" href="#">Bread and Ifits.</a>
-    <a class="col-2 flex-sm-fill text-sm-center nav-link" href="#" tabindex="-1" aria-disabled="true">Go to recipe
-        book</a>
 </nav>
 <div class="nav-transform"></div>
 <div class="container-fluid">
@@ -57,16 +55,18 @@ use BreadAndIfit\Ingredients\IngredientGateway;
         <main class="col-10">
             <?php
             if (!empty($_POST)){
-                echo BreadAndIfit\Ingredients\DisplayRecipes::outputRecipes(BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST));
+                $returnedRecipes = BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST);
+                $returnedRecipes = json_decode($returnedRecipes)->results;
+                echo BreadAndIfit\Ingredients\DisplayRecipes::outputRecipes($returnedRecipes);
             } else {
                 echo '
                  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="../res/images/toast1.jpg" class="d-block w-100" alt="Toast!">
+                        <img src="../res/images/ifit1.jpg" class="d-block w-100" alt="Toast!">
                     </div>
                     <div class="carousel-item">
-                        <img src="../res/images/ifit1.jpg" class="d-block w-100" alt="half empty cupboard">
+                        <img src="../res/images/toast1.jpg" class="d-block w-100" alt="half empty cupboard">
                     </div>
                     <div class="carousel-item">
                         <img src="../res/images/toast2.jpg" class="d-block w-100" alt="EVEN MORE toast!">

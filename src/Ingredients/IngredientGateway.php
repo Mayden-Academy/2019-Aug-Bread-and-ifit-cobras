@@ -41,7 +41,7 @@ class IngredientGateway implements GatewayInterface
      * @param string $url takes url from format data function
      * @return string JSON of recipes or error message if API unreachable
      */
-    static private function sendDataToAPI(string $url): string
+    public static function sendDataToAPI(string $url): string
     {
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);

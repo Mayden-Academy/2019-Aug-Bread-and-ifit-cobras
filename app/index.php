@@ -13,13 +13,13 @@
     <script type="text/javascript" src="js/dist/main.js"></script>
 </head>
 <body>
-<nav class="nav nav-pills flex-column flex-sm-row">
-    <a class="col-3 flex-sm-fill text-sm-center nav-link" href="#">Recipe Finder</a>
-    <a id="title" class="col-6 flex-sm-fill text-sm-center nav-link align-middle" href="#">Bread and Ifits.</a>
-    <a class="col-3 flex-sm-fill text-sm-center nav-link" href="#" tabindex="-1" aria-disabled="true">Go to recipe
-        book</a>
-</nav>
-<div class="nav-transform"></div>
+<!--<nav class="nav nav-pills flex-column flex-sm-row">-->
+<!--    <a class="col-3 flex-sm-fill text-sm-center nav-link" href="#">Recipe Finder</a>-->
+<!--    <a id="title" class="col-6 flex-sm-fill text-sm-center nav-link align-middle" href="#">Bread and Ifits.</a>-->
+<!--    <a class="col-3 flex-sm-fill text-sm-center nav-link" href="#" tabindex="-1" aria-disabled="true">Go to recipe-->
+<!--        book</a>-->
+<!--</nav>-->
+<!--<div class="nav-transform"></div>-->
 
 <div class="container-fluid">
 <div class="row" id="mainContent">
@@ -85,7 +85,55 @@
 
 
     <main class="col-9">
+        <?php
+//        require_once('../src/Ingredients/IngredientGateway.php');
+        require ('../vendor/autoload.php');
+        $data = \BreadAndIfit\Ingredients\IngredientGateway::sendDataToAPI('http://www.recipepuppy.com/api/?i=tomato');
+//        var_dump($data);
+
+        $dataArray = explode('{',$data);
+//                var_dump($dataArray);
+
+        //        echo gettype($jsonData);
+        array_shift($dataArray);
+        array_shift($dataArray);
+
+        $array = [
+            [0]=> array(5) { 
+              [0]=> string(30) ""title":"Dehydrating Tomatoes"" 
+              [1]=> string(65) ""href":"http:\/\/www.recipezaar.com\/Dehydrating-Tomatoes-325795""
+              [2]=> string(22) ""ingredients":"tomato""
+              [3]=> string(54) ""thumbnail":"http:\/\/img.recipepuppy.com\/37134.jpg"}"
+              [4]=> string(0) ""]
+        $recipeArray = [];
+        foreach ($dataArray as $item) {
+            $item = explode(',',$item);
+//            foreach ($item as $subitem) {
+//                $subitem = explode(':', $subitem)[1];
+//                var_dump($subitem);
+//            }
+
+//            echo $item['title'] + '<br>';
+            array_push($recipeArray, $item);
+        }
+        var_dump($recipeArray);
+
+        exit;
+//        $recipes = json_decode($jsonData);
+
+//        var_dump($recipes);
+
+//        $string = '';
+//        foreach ($recipes as $recipe => $key) {
+////            echo $recipe + ' : ' + $key + '<br>';
+//            $string .= '<br>' + $recipe + ' : ' + $key + '<br>';
+//
+////            echo 'hello';
+//        }
+//        var_dump($recipes);
+        ?>
         <div id="mainPannel">
+
             <div class="row recipe">
                 <div class="col-10 col-lg-4">
                     <img src="../res/images/food.jpg" alt="...">
@@ -96,6 +144,7 @@
                     <a id="linkToRecipeBtn" href="#" class="btn btn-primary float-right">Go somewhere</a>
                 </div>
             </div>
+
             <div class="row recipe">
                 <div class="col-10 col-lg-4">
                     <img src="../res/images/food.jpg" alt="...">

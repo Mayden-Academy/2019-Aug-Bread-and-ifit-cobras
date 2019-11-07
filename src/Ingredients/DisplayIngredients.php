@@ -46,7 +46,7 @@ class DisplayIngredients
             $cats .= $category . ' ';
             foreach ($array as $key => $value) {
                 $value = $value->getName();
-                $list .= '<label><input type="checkbox" value="' . $value . '" name="' . $value . '"><span class="ingredient">'.' '. $value . '</span></label>';
+                $list .= '<div><label><input type="checkbox" value="' . $value . '" name="' . $value . '"><span class="ingredient">'.' '. $value . '</span></label></div>';
             }
             $accordion .= '<div class="card">
                         <a class="card-header" type="button" data-toggle="collapse" data-target="#' . $category . '"

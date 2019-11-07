@@ -32,7 +32,7 @@ class IngredientGateway implements GatewayInterface
             $url .= $ingredient . ',';
         }
         $url = substr($url, 0, -1);
-        return $url;
+        return urlencode($url);
     }
 
     /**

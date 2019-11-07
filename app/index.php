@@ -40,16 +40,18 @@ use BreadAndIfit\Ingredients\IngredientHydrator;
 
 <div class="container-fluid">
     <div class="row" id="mainContent">
-        <aside class="col-2 justify-content-center">
-            <form method="post" id="ingredientsForm">
-                <?php
-                $db = DbConnector::getDatabase();
-                $ingredients = IngredientHydrator::getIngredients($db);
-                echo DisplayIngredients::displayIngredients($ingredients);
-                ?>
-            </form>
-            <input class="choice-btn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">
-        </aside>
+        <div class="col-2">
+            <aside class="justify-content-center">
+                <form method="post" id="ingredientsForm">
+                    <?php
+                    $db = DbConnector::getDatabase();
+                    $ingredients = IngredientHydrator::getIngredients($db);
+                    echo DisplayIngredients::displayIngredients($ingredients);
+                    ?>
+                </form>
+                <input class="choice-btn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">
+            </aside>
+        </div>
         <main class="col-10">
 
             <?php

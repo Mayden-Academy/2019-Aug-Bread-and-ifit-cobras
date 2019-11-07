@@ -27,7 +27,7 @@ class DisplayIngredientsTest extends TestCase
                            aria-expanded="false" aria-controls="Vegetables">Vegetables</a>
                         <div class="collapse multi-collapse" id="Vegetables">
                             <div class="card-body">
-                               <ul><div><input type="checkbox" value="carrot" name="carrot"><span class="ingredient"> carrot</span></input></div> </ul>
+                               <ul><label><input type="checkbox" value="carrot" name="carrot"><span class="ingredient"> carrot</span></input></label> </ul>
                             </div>
                             </div></div>');
     }

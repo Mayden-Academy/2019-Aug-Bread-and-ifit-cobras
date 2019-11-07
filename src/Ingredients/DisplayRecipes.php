@@ -36,24 +36,23 @@ class DisplayRecipes
 
     private static function outputHTML($recipes): string
     {
-      if (count($recipes) == 0) {
-          return '<div id="mainPannel">
+        if (count($recipes) == 0) {
+            return '<div id="mainPannel">
                     <div class="row recipe mx-auto">
                         <div class="col-10 col-lg-8">
                             <h5 class="card-title">There are no recipes available which use the ingredient(s) you selected</h5>                  
                         </div>
                     </div>
                 </div>';
-      } else {
+        } else {
 
-          $recipeCard = '<div id="mainPannel">';
+            $recipeCard = '<div id="mainPannel">';
 
-
-          foreach ($recipes as $recipe) {
-              if (!$recipe->thumbnail) {
-                  $recipe->thumbnail = '../res/images/noRecipe.jpg';
-              }
-              $recipeCard .= '<div class="row recipe mx-auto">
+            foreach ($recipes as $recipe) {
+                if (!$recipe->thumbnail) {
+                    $recipe->thumbnail = '../res/images/noRecipe.jpg';
+                }
+                $recipeCard .= '<div class="row recipe mx-auto">
                         <div class="col-10 col-lg-4">
                             <img class="recipe-thumbnail" src="' . $recipe->thumbnail . '" alt="">
                         </div>
@@ -63,17 +62,10 @@ class DisplayRecipes
                             <a id="linkToRecipeBtn" href="' . $recipe->href . '" class="btn btn-primary float-right">View recipe</a>
                         </div>
                     </div>';
-          }
+            }
+            $recipeCard .= '</div>';
 
-          $recipeCard .= '</div>';
-
-
-          return $recipeCard;
-      }
+            return $recipeCard;
+        }
     }
-
 }
-
-
-
-

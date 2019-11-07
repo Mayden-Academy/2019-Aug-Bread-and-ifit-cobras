@@ -46,6 +46,7 @@ $submitColor: #3ae8a5;
 aside {
   background-image: -webkit-linear-gradient($gradientColor1, $gradientColor2);
   overflow: auto;
+  height: 100vh;
 }
 
 #accordionExample {

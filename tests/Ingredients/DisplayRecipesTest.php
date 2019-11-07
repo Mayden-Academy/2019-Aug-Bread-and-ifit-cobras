@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 
 class DisplayRecipesTest extends TestCase
 {
-    public function testDisplayRecipes_successWithObjects()
+    public function testOutputHTML_successWithObjects()
     {
         $array = [];
         $object = new stdClass();
@@ -22,7 +22,7 @@ class DisplayRecipesTest extends TestCase
     }
 
 
-    public function testDisplayRecipes_successWithEmptyArray()
+    public function testOutputHTML_successWithEmptyArray()
     {
         $result = DisplayRecipes::outputHTML([]);
         $this->assertContains($result, '<div id="mainPannel">
@@ -34,7 +34,7 @@ class DisplayRecipesTest extends TestCase
                 </div>');
     }
 
-    public function testDisplayRecipes_failure()
+    public function testOutputHTML_failure()
     {
         $testItem = ['This should not work'];
         $result = DisplayRecipes::outputHTML($testItem);
@@ -45,5 +45,21 @@ class DisplayRecipesTest extends TestCase
                         </div>
                     </div>
                 </div>');
+    }
+
+
+    public function testValidateRecipe_success()
+    {
+        $object = new stdClass();
+        $object->results = [];
+        $result = DisplayRecipes::validateRecipe($object);
+        $this->assertTrue($result);
+    }
+
+    public function testValidateRecipe_failure()
+    {
+        $object = new stdClass();
+        $result = DisplayRecipes::validateRecipe($object);
+        $this->assertFalse($result);
     }
 }

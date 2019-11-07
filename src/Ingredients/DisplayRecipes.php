@@ -12,7 +12,7 @@ class DisplayRecipes
      * @param $recipes object that is returned after running through the JSON_decode function which should contain an array of recipe data
      * @return bool returns boolean to show whether the response data from the API is in a valid format
      */
-    public static function validateRecipe(object $recipes): bool
+    public static function validateRecipe(\stdClass $recipes): bool
     {
         return (is_object($recipes) && is_array($recipes->results));
     }

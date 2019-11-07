@@ -7,37 +7,11 @@
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-            crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-            crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-            crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/dist/main.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-    <?php
-    require('../vendor/autoload.php');
-    use BreadAndIfit\DbConnector;
-    use BreadAndIfit\Ingredients\DisplayIngredients;
-    use BreadAndIfit\Ingredients\Ingredient;
-    use BreadAndIfit\Ingredients\IngredientHydrator;
-
-    $db = DbConnector::getDatabase();
-
-    $ingredients = IngredientHydrator::getIngredients($db);
-
-    $accordion = DisplayIngredients::displayIngredients($ingredients);
-
-    echo $accordion;
-
-    ?>
-
 </head>
 <body>
 <nav class="nav nav-pills flex-column flex-sm-row">
@@ -50,76 +24,25 @@
 <div class="container-fluid">
     <div class="row" id="mainContent">
         <aside class="col-2 justify-content-center">
-            <form>
+            <form method="post" id="ingredientsForm">
                 <input class="choiceBtn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">
-                <input class="choiceBtn" type="button" id="expandAll" data-toggle="collapse"
-                       data-target=".multi-collapse" aria-expanded="false"
-                       aria-controls="multiCollapseExample1 multiCollapseExample2" value="Expand All">
-                <div class="accordion" id="accordionExample">
-                    <div class="card">
-                        <a class="card-header" type="button" data-toggle="collapse" data-target="#multiCollapseExample1"
-                           aria-expanded="false" aria-controls="multiCollapseExample2">Meat</a>
-                        <div class="collapse multi-collapse" id="multiCollapseExample1">
-                            <div class="card-body">
-                                <input type="checkbox" value="tomato" name="tomato"><span
-                                        class="ingredient"> tomato</span>
-                            </div>
-                            <div class="card-body">
-                                <input type="checkbox" value="tomato" name="tomato"><span
-                                        class="ingredient"> tomato</span>
-                            </div>
-                            <div class="card-body">
-                                <input type="checkbox" value="tomato" name="tomato"><span
-                                        class="ingredient"> tomato</span>
-                            </div>
-                            <div class="card-body">
-                                <input type="checkbox" value="tomato" name="tomato"><span
-                                        class="ingredient"> tomato</span>
-                            </div>
-                            <div class="card-body">
-                                <input type="checkbox" value="tomato" name="tomato"><span
-                                        class="ingredient"> tomato</span>
-                            </div>
-                            <div class="card-body">
-                                <input type="checkbox" value="tomato" name="tomato"><span
-                                        class="ingredient"> tomato</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <a class="card-header" type="button" data-toggle="collapse" data-target="#multiCollapseExample2"
-                           aria-expanded="false" aria-controls="multiCollapseExample2">Vegatables</a>
-                        <div class="collapse multi-collapse" id="multiCollapseExample2">
-                            <div class="card-body">
-                                <input type="checkbox" value="tomato" name="tomato"><span
-                                        class="ingredient"> tomato</span>
-                            </div>
-                            <div class="card-body">
-                                <input type="checkbox" value="tomato" name="tomato"><span
-                                        class="ingredient"> tomato</span>
-                            </div>
-                            <div class="card-body">
-                                <input type="checkbox" value="tomato" name="tomato"><span
-                                        class="ingredient"> tomato</span>
-                            </div>
-                            <div class="card-body">
-                                <input type="checkbox" value="tomato" name="tomato"><span
-                                        class="ingredient"> tomato</span>
-                            </div>
-                            <div class="card-body">
-                                <input type="checkbox" value="tomato" name="tomato"><span
-                                        class="ingredient"> tomato</span>
-                            </div>
-                            <div class="card-body">
-                                <input type="checkbox" value="tomato" name="tomato"><span
-                                        class="ingredient"> tomato</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <?php
+                require('../vendor/autoload.php');
+                use BreadAndIfit\DbConnector;
+                use BreadAndIfit\Ingredients\DisplayIngredients;
+                use BreadAndIfit\Ingredients\IngredientHydrator;
+
+                $db = DbConnector::getDatabase();
+
+                $ingredients = IngredientHydrator::getIngredients($db);
+
+                $accordion = DisplayIngredients::displayIngredients($ingredients);
+
+                echo $accordion;
+
+                ?>
             </form>
         </aside>
-
         <main class="col-10">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">
                 <div class="carousel-inner">

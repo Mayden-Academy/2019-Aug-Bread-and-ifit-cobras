@@ -19,20 +19,16 @@ class DisplayIngredientsTest extends TestCase
         $result = DisplayIngredients::displayIngredients([$ingredientMock]);
 
         $this->assertContains($result,
-            '<div class="accordion" id="accordionExample"><div class="card">
-                        <div class="card-header" id="headingOne">
-                             <h2 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseVegetables" aria-expanded="true" aria-controls="collapseVegetables">Vegetables</button>
-                              </h2>
-                        </div>
-        
-                         <div id="collapseVegetables" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                         <div class="card-body">
-                         <ul>
-                         <input type="checkbox">carrot</input>
-                         </ul>                        
-                         </div>
-                        </div>
-                    </div></div>');
+            '<input type="button" class="choiceBtn" id="expandAll" data-toggle="collapse"
+                       data-target=".multi-collapse" aria-expanded="false"
+                       aria-controls="Vegetables " value="Toggle All">
+                       <div class="accordion" id="accordionExample"><div class="card">
+                        <a class="card-header" type="button" data-toggle="collapse" data-target="#Vegetables"
+                           aria-expanded="false" aria-controls="Vegetables">Vegetables</a>
+                        <div class="collapse multi-collapse" id="Vegetables">
+                            <div class="card-body">
+                               <ul><div><input type="checkbox" value="carrot" name="carrot"><span class="ingredient"> carrot</span></input></div> </ul>
+                            </div>
+                            </div></div>');
     }
 }

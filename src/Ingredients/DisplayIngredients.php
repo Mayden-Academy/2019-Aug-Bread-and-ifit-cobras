@@ -42,32 +42,28 @@ class DisplayIngredients
      */
     private static function outputHTML(array $ingredientSorted): string
     {
-        $accordion = '<div class="accordion" id="accordionExample">';
-        foreach ($ingredientSorted as $category => $array){
+        $accordion = '';
+        $cats = '';
+        foreach ($ingredientSorted as $category => $array) {
             $list = '';
-            foreach ($array as $key => $value){
-                $list .= '<input type="checkbox">'.$value.'</input>';
+            $cats .= $category . ' ';
+            foreach ($array as $key => $value) {
+                $list .= '<div><input type="checkbox" value="' . $value . '" name="' . $value . '"><span class="ingredient">'.' '. $value . '</span></input></div>';
             }
-        $accordion .= '<div class="card">
-                        <div class="card-header" id="headingOne">
-                             <h2 class="mb-0">
-                                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapse'.$category.'" aria-expanded="true" aria-controls="collapse'.$category.'">'
-                                    . $category .
-                                '</button>
-                              </h2>
-                        </div>
-        
-                         <div id="collapse'.$category.'" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
-                         <div class="card-body">
-                         <ul>
-                         ' . $list . '
-                         </ul>                        
-                         </div>
-                        </div>
-                    </div>';
+            $accordion .= '<div class="card">
+                        <a class="card-header" type="button" data-toggle="collapse" data-target="#' . $category . '"
+                           aria-expanded="false" aria-controls="' . $category . '">' . $category . '</a>
+                        <div class="collapse multi-collapse" id="' . $category . '">
+                            <div class="card-body">
+                               <ul>' . $list . ' </ul>
+                            </div>
+                            </div>';
         }
         $accordion .= '</div>';
+        $accordion = '<input type="button" class="choiceBtn" id="expandAll" data-toggle="collapse"
+                       data-target=".multi-collapse" aria-expanded="false"
+                       aria-controls="' . $cats . '" value="Toggle All">
+                       <div class="accordion" id="accordionExample">' . $accordion;
         return $accordion;
     }
 }
-

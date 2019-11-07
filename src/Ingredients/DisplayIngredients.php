@@ -62,7 +62,7 @@ class DisplayIngredients
         $accordion .= '</div>';
         $accordion = '<input type="button" class="choiceBtn" id="expandAll" data-toggle="collapse"
                        data-target=".multi-collapse" aria-expanded="false"
-                       aria-controls="' . $cats . '" value="Expand All">
+                       aria-controls="' . $cats . '" value="Toggle All">
                        <div class="accordion" id="accordionExample">' . $accordion;
         return $accordion;
     }

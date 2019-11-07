@@ -38,8 +38,8 @@ use BreadAndIfit\Ingredients\IngredientGateway;
 <div class="nav-transform"></div>
 <div class="container-fluid">
     <div class="row" id="mainContent">
-        <div class="col-2">
-            <aside class="justify-content-center">
+        <div class="col-2" id="menuContainer">
+            <aside class="justify-content-center col-12">
                 <form method="post" id="ingredientsForm">
                     <?php
                     $db = DbConnector::getDatabase();
@@ -53,6 +53,7 @@ use BreadAndIfit\Ingredients\IngredientGateway;
                 </form>
                 <input class="choice-btn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">
             </aside>
+
         </div>
         <main class="col-10">
             <?php

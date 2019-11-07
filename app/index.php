@@ -24,7 +24,7 @@
 <div class="container-fluid">
     <div class="row" id="mainContent">
         <aside class="col-2 justify-content-center">
-            <form method="post">
+            <form method="post" id="ingredientsForm">
                 <input class="choiceBtn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">
                 <?php
                 require('../vendor/autoload.php');

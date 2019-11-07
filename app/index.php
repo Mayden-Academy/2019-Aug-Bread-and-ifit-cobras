@@ -4,6 +4,7 @@ use BreadAndIfit\DbConnector;
 use BreadAndIfit\Ingredients\DisplayIngredients;
 use BreadAndIfit\Ingredients\IngredientHydrator;
 use BreadAndIfit\Ingredients\IngredientValidator;
+use BreadAndIfit\Ingredients\IngredientGateway;
 ?>
 
 <!DOCTYPE html>
@@ -37,13 +38,8 @@ use BreadAndIfit\Ingredients\IngredientValidator;
                 echo DisplayIngredients::displayIngredients($ingredients);
                 $validator = IngredientValidator::checkUserInput($_POST);
                 if ($validator){
-                    // Run the ingredient gateway
-                } else {
-                    // Cry
+                    BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST);
                 }
-
-
-
                 ?>
             </form>
             <input class="choice-btn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">

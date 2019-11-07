@@ -10,7 +10,7 @@ class IngredientValidator
      * @param $post containing user selected ingredients
      * @return bool true if passes validation, otherwise false
      */
-    public static function checkUserInput($post): bool
+    public static function checkUserInput($post)
     {
         if (!empty($post)) {
             $checkArray = [];

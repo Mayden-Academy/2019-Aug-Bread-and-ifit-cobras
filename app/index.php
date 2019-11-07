@@ -27,6 +27,8 @@ use BreadAndIfit\Ingredients\IngredientGateway;
             crossorigin="anonymous"></script>
 </head>
 <body>
+<div>
+</div>
 <nav class="nav nav-pills flex-column flex-sm-row">
     <a class="col-2 flex-sm-fill text-sm-center nav-link" href="#">Recipe Finder</a>
     <a id="title" class="col-8 flex-sm-fill text-sm-center nav-link align-middle" href="#">Bread and Ifits.</a>
@@ -41,6 +43,10 @@ use BreadAndIfit\Ingredients\IngredientGateway;
                     $db = DbConnector::getDatabase();
                     $ingredients = IngredientHydrator::getIngredients($db);
                     echo DisplayIngredients::displayIngredients($ingredients);
+                    $validator = IngredientValidator::checkUserInput($_POST);
+                    if ($validator) {
+                        BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST);
+                    }
                     ?>
                 </form>
                 <input class="choice-btn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">
@@ -48,6 +54,7 @@ use BreadAndIfit\Ingredients\IngredientGateway;
         </div>
         <main class="col-10">
             <?php
+
             if (IngredientValidator::checkUserInput($_POST)){
                 $response = BreadAndIfit\Ingredients\IngredientGateway::sendDataReturnResponse($_POST);
                 $recipes = json_decode($response);
@@ -57,7 +64,7 @@ use BreadAndIfit\Ingredients\IngredientGateway;
                     echo '<div id="mainPannel">
                             <div class="row recipe mx-auto">
                                 <div class="col-10 col-lg-8">
-                                    <h5 class="card-title">Invalid response received from puppy API</h5>                   
+                                    <h5 class="card-title">Unexpected error, please try again</h5>
                                 </div>
                             </div>
                         </div>';

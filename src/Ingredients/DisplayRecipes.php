@@ -14,7 +14,7 @@ class DisplayRecipes
      */
     public static function validateRecipe(\stdClass $recipes): bool
     {
-        return (is_object($recipes) && is_array($recipes->results));
+        return (is_object($recipes) && property_exists($recipes, 'results') && is_array($recipes->results));
     }
 
     /**

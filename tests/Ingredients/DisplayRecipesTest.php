@@ -47,7 +47,6 @@ class DisplayRecipesTest extends TestCase
                 </div>');
     }
 
-
     public function testValidateRecipe_success()
     {
         $object = new stdClass();
@@ -56,9 +55,17 @@ class DisplayRecipesTest extends TestCase
         $this->assertTrue($result);
     }
 
-    public function testValidateRecipe_failure()
+    public function testValidateRecipe_failureNoResults()
     {
         $object = new stdClass();
+        $result = DisplayRecipes::validateRecipe($object);
+        $this->assertFalse($result);
+    }
+
+    public function testValidateRecipe_failureNoArray()
+    {
+        $object = new stdClass();
+        $object->results = '';
         $result = DisplayRecipes::validateRecipe($object);
         $this->assertFalse($result);
     }

@@ -3,5 +3,8 @@
     "psr-4": {
       "BreadAndIfit\\":"src/"
     }
+  },
+  "require": {
+    "ext-curl": "*"
   }
 }

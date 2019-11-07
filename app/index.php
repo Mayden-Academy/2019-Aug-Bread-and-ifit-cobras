@@ -36,7 +36,7 @@ use BreadAndIfit\Ingredients\IngredientHydrator;
                 echo  DisplayIngredients::displayIngredients($ingredients);
                 ?>
             </form>
-            <input class="choiceBtn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">
+            <input class="choice-btn col-2" id="getRecipeBtn" type="submit" value="Get Recipe">
         </aside>
         <main class="col-10">
             <div id="carouselExampleControls" class="carousel slide" data-ride="carousel" data-interval="5000">

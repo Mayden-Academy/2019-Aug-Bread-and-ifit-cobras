@@ -32,8 +32,6 @@ use BreadAndIfit\Ingredients\IngredientGateway;
 <nav class="nav nav-pills flex-column flex-sm-row">
     <a class="col-2 flex-sm-fill text-sm-center nav-link" href="#">Recipe Finder</a>
     <a id="title" class="col-8 flex-sm-fill text-sm-center nav-link align-middle" href="#">Bread and Ifits.</a>
-    <a class="col-2 flex-sm-fill text-sm-center nav-link" href="#" tabindex="-1" aria-disabled="true">Go to recipe
-        book</a>
 </nav>
 <div class="nav-transform"></div>
 <div class="container-fluid">

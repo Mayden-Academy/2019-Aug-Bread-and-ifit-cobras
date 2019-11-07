@@ -4,5 +4,3 @@ node_modules/
 vendor/
 package-lock.json
 app/css/style.css
-app/recipeTemplate.php
-app/testGetRecipes.php
